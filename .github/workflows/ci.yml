@@ -24,7 +24,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
 
       - name: Generate npmrc
-        run: echo "@hyesungoh:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=${{ secrets.HYESUNG_PACKAGES_READ }}" > ./npmrc
+        run: echo "@hyesungoh:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=${{ secrets.HYESUNG_PACKAGES_READ }}" > ./.npmrc
 
       - name: Install dependencies
         run: yarn install --immutable
