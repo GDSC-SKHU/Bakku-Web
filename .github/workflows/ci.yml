@@ -23,10 +23,12 @@ jobs:
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
           registry-url: "https://npm.pkg.github.com"
 
+      - name: Generate npmrc
+        run: echo "@hyesungoh:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${{ secrets.HYESUNG_PACKAGES_READ }}" > ./npmrc
+
       - name: Install dependencies
         run: yarn install --immutable
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.HYESUNG_PACKAGES_READ }}
 
       - name: Check Lint
         run: yarn lint
