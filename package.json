@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "lint:fix": "eslint 'src/**/*.{ts}' --fix",
+    "lint:fix": "ng lint bakku --fix",
     "prepare": "husky install"
   },
   "private": true,
