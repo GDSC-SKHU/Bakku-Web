@@ -22,8 +22,12 @@ jobs:
         with:
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
 
-      - name: Generate yarnrc
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.HYESUNG_PACKAGES_READ }}\nregistry=https://npm.pkg.github.com/OWNER" > ./.yarnrc
+      - name: Generate npmrc
+        run: |
+          echo "registry=https://registry.npmjs.org/" > .npmrc
+          echo "@hyesungoh:registry=https://npm.pkg.github.com/" >> .npmrc
+          echo "@GDSC-SKHU:registry=https://npm.pkg.github.com/" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.HYESUNG_PACKAGES_READ }}" >> .npmrc
 
       - name: Install dependencies
         run: yarn install --immutable

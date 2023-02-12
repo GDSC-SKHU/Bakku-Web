@@ -1319,10 +1319,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@hyesungoh/eslint-plugin@^1.0.0":
-  version "1.0.0"
-  resolved "https://npm.pkg.github.com/download/@hyesungoh/eslint-plugin/1.0.0/7b43a2ad03a5803790b8341ba67bba5928c203ed#7b43a2ad03a5803790b8341ba67bba5928c203ed"
-  integrity sha512-pf63cKOWO+P2JAqFh06sj8D0CSmnqsb+k/n9XLm/+Naoo9antaYktMa5JxdqiPKG/EoEouMdz8Oxkja5b9bnRg==
+"@hyesungoh/eslint-plugin@^1.0.1":
+  version "1.0.1"
+  resolved "https://npm.pkg.github.com/download/@hyesungoh/eslint-plugin/1.0.1/cbf5fb809194abf89f2f07a8b853bf22745abbaa#cbf5fb809194abf89f2f07a8b853bf22745abbaa"
+  integrity sha512-SBr4CafovDdDs6zKDzIvInklDSiGVl89sz1Nxa8Waxju1XOYy62Ft6i/WJRw8tsWHLuZViCmrSDGoaQQzZZk9Q==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.49.0"
     "@typescript-eslint/parser" "^5.49.0"
