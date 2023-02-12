@@ -5,7 +5,7 @@ jobs:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
-     - name: Checkout current commit
+      - name: Checkout current commit
         uses: actions/checkout@v2
 
       - name: Generate npmrc
