@@ -37,7 +37,7 @@
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@hyesungoh/eslint-plugin": "^1.0.1",
-    "@types/jasmine": "~3.10.0",
+    "@types/jasmine": "~4.3.1",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.27.1",
     "@typescript-eslint/parser": "5.27.1",
