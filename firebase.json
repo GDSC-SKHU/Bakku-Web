@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/bakku",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
