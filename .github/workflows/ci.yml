@@ -21,10 +21,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
-          registry-url: "https://npm.pkg.github.com"
 
-      - name: Generate npmrc
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.HYESUNG_PACKAGES_READ }}\nregistry=https://npm.pkg.github.com/OWNER" > ./.npmrc
+      - name: Generate yarnrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.HYESUNG_PACKAGES_READ }}\nregistry=https://npm.pkg.github.com/OWNER" > ./.yarnrc
 
       - name: Install dependencies
         run: yarn install --immutable
