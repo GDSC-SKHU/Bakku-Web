@@ -4,7 +4,8 @@
   "newProjectRoot": "projects",
   "cli": {
     "packageManager": "yarn",
-    "defaultCollection": "@angular-eslint/schematics"
+    "defaultCollection": "@angular-eslint/schematics",
+    "analytics": "32a2959a-dc48-4944-956f-76db606a7821"
   },
   "projects": {
     "bakku": {
