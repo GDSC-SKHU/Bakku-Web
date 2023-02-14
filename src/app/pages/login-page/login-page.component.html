@@ -1,1 +1,5 @@
 <p>login-page works!</p>
+<p>{{ authService.user ? "로긴됨" : "안됨" }}</p>
+
+<button type="button" (click)="authService.login()">login</button>
+<button type="button" (click)="authService.logout()">logout</button>
