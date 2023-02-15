@@ -5,7 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { LoginPageComponent } from "./pages/login-page/login-page.component";
 import { NotFoundPageComponent } from "./pages/not-found-page/not-found-page.component";
-import { redirectUnauthorizedToLogin } from "./utils/auth-guard-pipe";
+import { redirectUnauthorizedToLogin } from "./shared/utils/auth-guard-pipe";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
