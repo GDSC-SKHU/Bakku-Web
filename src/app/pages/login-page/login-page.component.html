@@ -1,5 +1,10 @@
 <p>login-page works!</p>
-<p>{{ authService.user ? "로긴됨" : "안됨" }}</p>
+<div *ngIf="auth.user | async as user">
+  <h1>hello {{ user.displayName }}</h1>
+  <img src="{{ user.photoURL }}" />
+  <p>email: {{ user.email }}</p>
+  <p>uid: {{ user.uid }}</p>
+</div>
 
-<button type="button" (click)="authService.login()">login</button>
-<button type="button" (click)="authService.logout()">logout</button>
+<button type="button" (click)="login()">login</button>
+<button type="button" (click)="logout()">logout</button>
