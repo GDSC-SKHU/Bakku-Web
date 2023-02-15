@@ -340,10 +340,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@~15.1.4":
-  version "15.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-15.1.4.tgz#da6d1e44668d89c22ff6b27607fad18b8065c38a"
-  integrity sha512-PrRNVbnPY38eh0zVDoNlx2EDHe4AzQ4bhJv3Wsrm+IFgi0e4yet8FQuL6sj1JBjLztKuZsndG2M/fyRWIpYkMQ==
+"@angular/platform-browser@~15.1.5":
+  version "15.1.5"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-15.1.5.tgz#6df8d4b812556d3817e4a51f7350eeaf5d69ccfc"
+  integrity sha512-epeESrWEt41W6i2NqIbGKNE0Oa1JfeDtKfMXtcjUNCgT76qS3zmC0G6irO8BOVbrwpA/YI4yYx1B9vTDUXYbEg==
   dependencies:
     tslib "^2.3.0"
 
