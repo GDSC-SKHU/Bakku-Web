@@ -1,0 +1,27 @@
+main {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100vw;
+  min-height: calc(100vh - 64px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  height: 300px;
+}
+
+.login-btn {
+  &__wrapper {
+    width: 8rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.google {
+  background-color: #db4437;
+}

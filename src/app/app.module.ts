@@ -7,6 +7,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { environment } from "src/environments/environment";
 
 import { AppComponent } from "./app.component";
@@ -22,6 +23,7 @@ import { RankingModule } from "./ranking/ranking.module";
 @NgModule({
   declarations: [AppComponent, HomePageComponent, LoginPageComponent, NotFoundPageComponent],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),

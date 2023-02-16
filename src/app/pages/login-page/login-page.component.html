@@ -1,10 +1,10 @@
-<p>login-page works!</p>
-<div *ngIf="auth.user | async as user">
-  <h1>hello {{ user.displayName }}</h1>
-  <img src="{{ user.photoURL }}" />
-  <p>email: {{ user.email }}</p>
-  <p>uid: {{ user.uid }}</p>
-</div>
+<main>
+  <section>something cool</section>
 
-<button type="button" (click)="login()">login</button>
-<button type="button" (click)="logout()">logout</button>
+  <button (click)="login()" mat-flat-button color="primary" class="login-btn google">
+    <div class="login-btn__wrapper">
+      <fa-icon [icon]="faGoogle" />
+      <span>구글로 로그인하기 </span>
+    </div>
+  </button>
+</main>
