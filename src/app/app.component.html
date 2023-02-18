@@ -1,5 +1,5 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row class="toolbar">
+<mat-toolbar color="primary" class="toolbar">
+  <mat-toolbar-row class="toolbar__row">
     <a
       mat-flat-button
       color="primary"
@@ -7,8 +7,11 @@
       routerLinkActive="active"
       ariaCurrentWhenActive="page"
     >
-      <h1 class="toolbar__heading">바꾸</h1>
+      <h1 class="toolbar__row__heading">바꾸</h1>
     </a>
+
+    <a routerLink="/event/1">테스트 이벤트 1</a>
+    <a routerLink="/event/2">테스트 이벤트 2</a>
 
     <div>
       <a mat-icon-button routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
@@ -21,7 +24,6 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<a routerLink="/event/1">테스트 이벤트 1</a>
-<a routerLink="/event/2">테스트 이벤트 2</a>
+<div class="toolbar__remainer"></div>
 
 <router-outlet></router-outlet>

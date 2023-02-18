@@ -1,19 +1,25 @@
 <main *ngIf="event$ | async as event">
-  <div class="ocean-img-wrapper">
+  <section class="ocean-img-wrapper">
     <img
       class="ocean-img"
       src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     />
-  </div>
+  </section>
 
-  <h1>{{ event.id }}</h1>
-  <span>2022. 02. 02.</span>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum non
-    repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo sunt fugit
-    eos vero?
-  </p>
-  <div>
-    <google-map></google-map>
-  </div>
+  <div class="remainer"></div>
+
+  <section class="wrapper">
+    <article class="wrapper__content">
+      <h1>{{ event.id }}</h1>
+      <span>2022. 02. 02.</span>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum non
+        repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo sunt
+        fugit eos vero?
+      </p>
+      <div>
+        <google-map></google-map>
+      </div>
+    </article>
+  </section>
 </main>
