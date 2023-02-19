@@ -1,1 +1,3 @@
-<p>bakku-detail-page works!</p>
+<main *ngIf="bakku$ | async as bakku">
+  <h1>바꾸 {{ bakku.id }}</h1>
+</main>

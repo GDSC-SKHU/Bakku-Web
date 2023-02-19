@@ -7,6 +7,6 @@ import { EventRoutingModule } from "./event-routing.module";
 
 @NgModule({
   declarations: [EventDetailPageComponent],
-  imports: [CommonModule, EventRoutingModule, EventRoutingModule, GoogleMapsModule],
+  imports: [CommonModule, EventRoutingModule, GoogleMapsModule],
 })
 export class EventModule {}

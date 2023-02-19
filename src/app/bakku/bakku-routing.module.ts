@@ -8,14 +8,14 @@ import { BakkuDetailPageComponent } from "./bakku-detail-page/bakku-detail-page.
 
 const routes: Routes = [
   {
-    path: "bakku/:id",
-    component: BakkuDetailPageComponent,
+    path: "bakku/append",
+    component: BakkuAppendPageComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
-    path: "bakku/append",
-    component: BakkuAppendPageComponent,
+    path: "bakku/:id",
+    component: BakkuDetailPageComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
