@@ -1,0 +1,8 @@
+@import "../../shared/mixins/layout.scss";
+
+main {
+  @include layout;
+
+  display: flex;
+  flex-direction: column;
+}
