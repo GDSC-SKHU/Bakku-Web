@@ -12,8 +12,6 @@ interface Event {
   styleUrls: ["./event-detail-page.component.scss"],
 })
 export class EventDetailPageComponent implements OnInit {
-  declare googleMapApiLoaded: Observable<boolean>;
-
   declare event$: Observable<Event>;
 
   constructor(private route: ActivatedRoute) {}

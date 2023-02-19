@@ -1,1 +1,5 @@
-<p>ocean-detail-page works!</p>
+<main *ngIf="ocean$ | async as ocean">
+  <p>{{ ocean.id }}</p>
+  <h1>을왕리 해수욕장</h1>
+  <google-map [options]="googleMapOptions"></google-map>
+</main>

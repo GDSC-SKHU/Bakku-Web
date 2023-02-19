@@ -1,5 +1,4 @@
 import { CommonModule } from "@angular/common";
-import { HttpClientJsonpModule, HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { GoogleMapsModule } from "@angular/google-maps";
 
@@ -8,12 +7,6 @@ import { EventRoutingModule } from "./event-routing.module";
 
 @NgModule({
   declarations: [EventDetailPageComponent],
-  imports: [
-    CommonModule,
-    EventRoutingModule,
-    GoogleMapsModule,
-    HttpClientModule,
-    HttpClientJsonpModule,
-  ],
+  imports: [CommonModule, EventRoutingModule, EventRoutingModule, GoogleMapsModule],
 })
 export class EventModule {}
