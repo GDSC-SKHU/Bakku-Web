@@ -302,10 +302,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/google-maps@^15.1.4":
-  version "15.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/google-maps/-/google-maps-15.1.4.tgz#3f80ce89fe49655dd4f130eb8bc20c0739af642c"
-  integrity sha512-WGcEfujyCW8rV2mckxhlgN4NziRhb1tyUvc9ZZp4kuPhbWgC0HEghQvqilV4F8vRZeULuBN6m0KXS2bvPEsDqg==
+"@angular/google-maps@^15.1.5":
+  version "15.1.5"
+  resolved "https://registry.yarnpkg.com/@angular/google-maps/-/google-maps-15.1.5.tgz#0f39794bf1ca383d18b4bd738b29962aafa6dc01"
+  integrity sha512-nh6ThtZ5el7/Hk0nUnhjfYMziiPMCO+yC6G57R6wtS4LEo7NLOS3yTFoUiWn5shOXFEwmOLvrjv3XXBUm0NvwQ==
   dependencies:
     "@types/google.maps" "^3.45.6"
     tslib "^2.3.0"
