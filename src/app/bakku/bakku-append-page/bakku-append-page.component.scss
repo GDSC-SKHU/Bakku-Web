@@ -2,7 +2,23 @@
 
 main {
   @include layout;
+  padding-top: 20px;
 
   display: flex;
   flex-direction: column;
+}
+
+.bakku-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+
+  & > mat-form-field {
+    width: 50%;
+  }
 }

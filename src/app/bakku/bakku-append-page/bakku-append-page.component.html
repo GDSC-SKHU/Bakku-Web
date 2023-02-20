@@ -1,34 +1,49 @@
 <main>
-  <mat-form-field appearance="outline">
-    <mat-label>이름</mat-label>
-    <input matInput />
-  </mat-form-field>
+  <form [formGroup]="bakkuForm" class="bakku-form">
+    <mat-form-field appearance="outline">
+      <mat-label>이름</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="getFormControl('name')?.invalid">{{ getErrorMsg("name") }}</mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>해수욕장</mat-label>
-    <mat-select>
-      <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
-      <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
-      <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
-      <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
-      <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>해수욕장</mat-label>
+        <mat-select formControlName="ocean">
+          <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
+          <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
+          <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
+          <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
+          <mat-option value="을왕리 해수욕장">을왕리 해수욕장</mat-option>
+        </mat-select>
+        <mat-error *ngIf="getFormControl('ocean')?.invalid">{{ getErrorMsg("ocean") }}</mat-error>
+      </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>날짜</mat-label>
-    <input matInput [matDatepicker]="picker" />
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>날짜</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" placeholder="02/28/2023" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="getFormControl('date')?.invalid">{{ getErrorMsg("date") }}</mat-error>
+      </mat-form-field>
+    </div>
 
-  <mat-form-field appearance="outline">
-    <mat-label>청소한 양</mat-label>
-    <input matInput type="number" />
-  </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>청소한 양</mat-label>
+      <input matInput type="number" formControlName="cleanWeight" />
+      <mat-error *ngIf="getFormControl('cleanWeight')?.invalid">{{
+        getErrorMsg("cleanWeight")
+      }}</mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>설명</mat-label>
-    <textarea matInput maxlength="255"></textarea>
-  </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>설명</mat-label>
+      <textarea matInput maxlength="255" formControlName="comment"></textarea>
+      <mat-hint align="end">{{ bakkuForm.value.comment?.length }} / 255</mat-hint>
+    </mat-form-field>
+  </form>
+
+  <div>
+    {{ bakkuForm.value | json }}
+  </div>
 </main>
