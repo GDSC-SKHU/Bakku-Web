@@ -33,6 +33,7 @@ export class BakkuAppendPageComponent {
   };
 
   bakkuForm = new FormGroup({
+    titleImage: new FormControl<File | null>(null),
     name: new FormControl("", [Validators.required]),
     ocean: new FormControl("", [Validators.required]),
     date: new FormControl<Date>(new Date(), [Validators.required]),

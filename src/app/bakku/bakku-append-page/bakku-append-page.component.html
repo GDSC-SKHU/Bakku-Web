@@ -1,16 +1,104 @@
 <main>
   <form [formGroup]="bakkuForm" class="bakku-form">
-    <label>
-      <input
-        type="file"
-        accept="image/*"
-        #imageInput
-        (change)="processFile(imageInput, titleImage)"
-      />
-    </label>
+    <div class="image-input-wrapper title-image-wrapper">
+      <label *ngIf="titleImage.status !== 'ok'">
+        <button
+          class="image-input-wrapper__button"
+          type="button"
+          (click)="titleImageInput.click()"
+          mat-button
+        >
+          대표 사진 올리기 *
+        </button>
 
-    <div *ngIf="titleImage.status === 'ok'">
-      <img src="{{ titleImage.src }}" />
+        <input
+          type="file"
+          accept="image/*"
+          required
+          hidden
+          #titleImageInput
+          formControlName="titleImage"
+          (change)="processFile(titleImageInput, titleImage)"
+        />
+      </label>
+
+      <div *ngIf="titleImage.status === 'ok'" class="preview-image-wrapper">
+        <img src="{{ titleImage.src }}" />
+
+        <button type="button" mat-mini-fab color="primary" class="preview-image-wrapper__clear-btn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="image-input-wrapper before-after-image-wrapper">
+        <label *ngIf="beforeImage.status !== 'ok'">
+          <button
+            class="image-input-wrapper__button"
+            type="button"
+            (click)="beforeImageInput.click()"
+            mat-button
+          >
+            이전 사진 올리기
+          </button>
+
+          <input
+            type="file"
+            accept="image/*"
+            hidden
+            #beforeImageInput
+            (change)="processFile(beforeImageInput, beforeImage)"
+          />
+        </label>
+
+        <div *ngIf="beforeImage.status === 'ok'" class="preview-image-wrapper">
+          <img src="{{ beforeImage.src }}" />
+
+          <button
+            type="button"
+            mat-mini-fab
+            color="primary"
+            class="preview-image-wrapper__clear-btn"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="image-input-wrapper before-after-image-wrapper">
+        <label *ngIf="afterImage.status !== 'ok'">
+          <button
+            class="image-input-wrapper__button"
+            type="button"
+            (click)="afterImageInput.click()"
+            mat-button
+          >
+            이후 사진 올리기
+          </button>
+
+          <input
+            type="file"
+            accept="image/*"
+            hidden
+            #afterImageInput
+            (change)="processFile(afterImageInput, afterImage)"
+          />
+        </label>
+
+        <div *ngIf="afterImage.status === 'ok'" class="preview-image-wrapper">
+          <img src="{{ afterImage.src }}" />
+
+          <button
+            type="button"
+            mat-mini-fab
+            color="primary"
+            class="preview-image-wrapper__clear-btn"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
 
     <mat-form-field appearance="outline">
