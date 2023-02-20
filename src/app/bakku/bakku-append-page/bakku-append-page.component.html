@@ -1,5 +1,5 @@
 <main>
-  <form [formGroup]="bakkuForm" class="bakku-form">
+  <form [formGroup]="bakkuForm" class="bakku-form" (ngSubmit)="onSubmit()">
     <div class="image-input-wrapper title-image-wrapper">
       <label *ngIf="titleImage.status !== 'ok'">
         <button
@@ -8,7 +8,8 @@
           (click)="titleImageInput.click()"
           mat-button
         >
-          대표 사진 올리기 *
+          대표 사진 올리기*
+          <mat-icon>image</mat-icon>
         </button>
 
         <input
@@ -25,7 +26,13 @@
       <div *ngIf="titleImage.status === 'ok'" class="preview-image-wrapper">
         <img src="{{ titleImage.src }}" />
 
-        <button type="button" mat-mini-fab color="primary" class="preview-image-wrapper__clear-btn">
+        <button
+          type="button"
+          (click)="clearImageInput('titleImage', titleImage)"
+          mat-mini-fab
+          color="primary"
+          class="preview-image-wrapper__clear-btn"
+        >
           <mat-icon>delete</mat-icon>
         </button>
       </div>
@@ -41,6 +48,7 @@
             mat-button
           >
             이전 사진 올리기
+            <mat-icon>image</mat-icon>
           </button>
 
           <input
@@ -48,6 +56,7 @@
             accept="image/*"
             hidden
             #beforeImageInput
+            formControlName="beforeImage"
             (change)="processFile(beforeImageInput, beforeImage)"
           />
         </label>
@@ -57,6 +66,7 @@
 
           <button
             type="button"
+            (click)="clearImageInput('beforeImage', beforeImage)"
             mat-mini-fab
             color="primary"
             class="preview-image-wrapper__clear-btn"
@@ -74,14 +84,17 @@
             (click)="afterImageInput.click()"
             mat-button
           >
-            이후 사진 올리기
+            이후 사진 올리기*
+            <mat-icon>image</mat-icon>
           </button>
 
           <input
             type="file"
             accept="image/*"
             hidden
+            required
             #afterImageInput
+            formControlName="afterImage"
             (change)="processFile(afterImageInput, afterImage)"
           />
         </label>
@@ -91,6 +104,7 @@
 
           <button
             type="button"
+            (click)="clearImageInput('afterImage', afterImage)"
             mat-mini-fab
             color="primary"
             class="preview-image-wrapper__clear-btn"
@@ -142,9 +156,16 @@
       <textarea matInput maxlength="255" formControlName="comment"></textarea>
       <mat-hint align="end">{{ bakkuForm.value.comment?.length }} / 255</mat-hint>
     </mat-form-field>
-  </form>
 
-  <div>
-    {{ bakkuForm.value | json }}
-  </div>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      class="bakku-form__submit-btn"
+      [disabled]="bakkuForm.invalid"
+    >
+      바꾸 기록하기
+      <mat-icon>done</mat-icon>
+    </button>
+  </form>
 </main>

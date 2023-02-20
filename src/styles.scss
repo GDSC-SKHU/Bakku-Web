@@ -52,3 +52,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+mat-error,
+mat-hint {
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 0.875rem;
+  line-height: 150%;
+  font-weight: 400;
+  letter-spacing: 0.03125rem;
+}

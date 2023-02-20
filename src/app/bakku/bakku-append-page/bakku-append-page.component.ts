@@ -32,8 +32,16 @@ export class BakkuAppendPageComponent {
     reader.readAsDataURL(file);
   };
 
+  clearImageInput = (imageFormName: keyof typeof this.bakkuForm.value, imageInput: ImageInput) => {
+    imageInput.clear();
+    const control = this.getFormControl(imageFormName)!;
+    control.reset();
+  };
+
   bakkuForm = new FormGroup({
     titleImage: new FormControl<File | null>(null),
+    beforeImage: new FormControl<File | null>(null),
+    afterImage: new FormControl<File | null>(null),
     name: new FormControl("", [Validators.required]),
     ocean: new FormControl("", [Validators.required]),
     date: new FormControl<Date>(new Date(), [Validators.required]),
@@ -41,11 +49,16 @@ export class BakkuAppendPageComponent {
     comment: new FormControl(""),
   });
 
-  public getFormControl = (valueName: keyof typeof this.bakkuForm.value) => {
+  onSubmit = () => {
+    // TODO: service post > redirect
+    console.log(this.bakkuForm.value);
+  };
+
+  getFormControl = (valueName: keyof typeof this.bakkuForm.value) => {
     return this.bakkuForm.get(valueName);
   };
 
-  public getErrorMsg = (valueName: keyof typeof this.bakkuForm.value) => {
+  getErrorMsg = (valueName: keyof typeof this.bakkuForm.value) => {
     const control = this.getFormControl(valueName)!;
 
     if (valueName === "cleanWeight") {
