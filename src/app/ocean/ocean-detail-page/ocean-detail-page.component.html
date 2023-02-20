@@ -1,5 +1,26 @@
 <main *ngIf="ocean$ | async as ocean">
-  <p>{{ ocean.id }}</p>
-  <h1>을왕리 해수욕장</h1>
-  <google-map [options]="googleMapOptions"></google-map>
+  <section class="ocean-img-wrapper">
+    <img
+      class="ocean-img"
+      src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    />
+  </section>
+
+  <div class="remainer"></div>
+
+  <section class="wrapper">
+    <article class="wrapper__content">
+      <h1>을왕리 해수욕장</h1>
+      <span>{{ ocean.id }}</span>
+      <span>2022. 02. 02.</span>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum non
+        repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo sunt
+        fugit eos vero?
+      </p>
+      <div>
+        <google-map [options]="googleMapOptions"></google-map>
+      </div>
+    </article>
+  </section>
 </main>
