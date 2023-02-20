@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { ImageInput } from "src/app/shared/class/image-input";
 
 @Component({
   selector: "app-bakku-append-page",
@@ -9,6 +10,27 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 })
 export class BakkuAppendPageComponent {
   constructor(public auth: AngularFireAuth) {}
+
+  titleImage = new ImageInput();
+  beforeImage = new ImageInput();
+  afterImage = new ImageInput();
+
+  processFile = (input: HTMLInputElement, imageInput: ImageInput) => {
+    const file: File = input.files![0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      imageInput.src = reader.result as string;
+      imageInput.file = file;
+      imageInput.onSuccess();
+    };
+
+    reader.onerror = () => {
+      imageInput.onError();
+    };
+
+    reader.readAsDataURL(file);
+  };
 
   bakkuForm = new FormGroup({
     name: new FormControl("", [Validators.required]),
@@ -26,7 +48,7 @@ export class BakkuAppendPageComponent {
     const control = this.getFormControl(valueName)!;
 
     if (valueName === "cleanWeight") {
-      return "올바른 값을 입력해 주세요.";
+      return "입력 값을 확인해 주세요.";
     }
 
     if (control.hasError("required")) {

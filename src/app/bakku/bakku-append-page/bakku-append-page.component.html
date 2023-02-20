@@ -1,5 +1,18 @@
 <main>
   <form [formGroup]="bakkuForm" class="bakku-form">
+    <label>
+      <input
+        type="file"
+        accept="image/*"
+        #imageInput
+        (change)="processFile(imageInput, titleImage)"
+      />
+    </label>
+
+    <div *ngIf="titleImage.status === 'ok'">
+      <img src="{{ titleImage.src }}" />
+    </div>
+
     <mat-form-field appearance="outline">
       <mat-label>이름</mat-label>
       <input matInput formControlName="name" />
