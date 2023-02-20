@@ -310,10 +310,10 @@
     "@types/google.maps" "^3.45.6"
     tslib "^2.3.0"
 
-"@angular/material@15.1.4":
-  version "15.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-15.1.4.tgz#ba61aee1b7cdcbb8d257262ec57e3e7caa79f8f0"
-  integrity sha512-mepKRVzO3v4BxGkzkwO1PZjWTdLDbqkydmmiEYkzPOUk9I3tElzjYlybB0xuY6A5CIdXU9Mdc+AaUZWng2yN/g==
+"@angular/material@15.1.5":
+  version "15.1.5"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-15.1.5.tgz#2505ca9260ea5db1631089a0e8786a9a7cd10421"
+  integrity sha512-1N+pylZ7aoyh8/+kbiE/ks2IFUqzCtEyZTohTCm+MEXISUr2fU5c3k7uW5jRF3mjkmBeKycGe5haaOA8N2VZkw==
   dependencies:
     "@material/animation" "15.0.0-canary.684e33d25.0"
     "@material/auto-init" "15.0.0-canary.684e33d25.0"
