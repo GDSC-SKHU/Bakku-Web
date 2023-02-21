@@ -3,8 +3,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 interface DialogData {
   id: string;
-  ocean: string;
-  user: string;
 }
 
 @Component({
@@ -18,7 +16,9 @@ export class ReportDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {}
 
-  onNoClick = () => {
+  onReportClick = () => {
+    // TODO: 신고 접수 API 호출
+    console.log(`신고 접수 ${this.data.id}`);
     this.dialogRef.close();
   };
 }

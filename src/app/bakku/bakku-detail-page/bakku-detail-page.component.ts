@@ -25,11 +25,11 @@ export class BakkuDetailPageComponent implements OnInit {
     );
   }
 
-  openDialog = () => {
-    const dialogRef = this.dialog.open(ReportDialogComponent, { data: { id: 1 } });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
+  openDialog = async () => {
+    this.bakku$.subscribe((value) => {
+      this.dialog.open(ReportDialogComponent, {
+        data: { id: value.id },
+      });
     });
   };
 }

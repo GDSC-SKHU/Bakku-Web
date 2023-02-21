@@ -1,7 +1,8 @@
-<h1 mat-dialog-title>hello</h1>
+<h1 mat-dialog-title>정말 신고하실건가요?</h1>
 <div mat-dialog-content>
-  <p>어쩌구</p>
+  <p>신고 시 운영자가 확인 후 조치할 것입니다.</p>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="(onNoClick)">no</button>
+  <button mat-button color="warn" (click)="onReportClick()">신고하기</button>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>닫기</button>
 </div>
