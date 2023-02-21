@@ -1,0 +1,16 @@
+@mixin heading-title {
+  font-size: 2.75rem;
+  font-weight: 500;
+}
+
+@mixin sub-title {
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+@mixin small {
+  font-size: 0.875rem;
+  line-height: 150%;
+  font-weight: 400;
+  letter-spacing: 0.03125rem;
+}
