@@ -33,6 +33,11 @@ main {
   &__title {
     @include heading-title;
     margin-bottom: 6px;
+
+    & > a {
+      color: mat.get-color-from-palette($bakku-primary, default);
+      text-decoration: underline;
+    }
   }
 
   &__date {
@@ -52,13 +57,14 @@ main {
 .info {
   display: flex;
   gap: 1rem;
+  height: 320px;
 
   &__weight {
     @include mat-like-border;
     color: white;
     flex-shrink: 0;
     width: 300px;
-    height: 320px;
+    height: 100%;
     background-color: mat.get-color-from-palette($bakku-primary, default);
 
     display: flex;
@@ -86,6 +92,8 @@ main {
   &__description {
     font-size: 1.125rem;
     line-height: 180%;
+    height: 100%;
+    overflow-y: scroll;
   }
 }
 
