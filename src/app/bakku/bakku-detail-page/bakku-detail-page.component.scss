@@ -1,5 +1,5 @@
 @use "@angular/material" as mat;
-@import "../../../styles.scss";
+@import "../../shared/mixins/theme.scss";
 @import "../../shared/mixins/layout.scss";
 @import "../../shared/mixins/material-like.scss";
 @import "../../shared/mixins/typo.scss";
