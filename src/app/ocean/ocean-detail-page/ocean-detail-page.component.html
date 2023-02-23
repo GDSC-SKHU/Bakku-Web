@@ -11,16 +11,21 @@
   <section class="wrapper">
     <div class="wrapper__content">
       <article class="info-wrapper">
-        <h1 class="info-wrapper__title">을왕리 해수욕장</h1>
-        <span>{{ ocean.id }}</span>
-        <span>2022. 02. 02.</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum
-          non repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo
-          sunt fugit eos vero?
-        </p>
-        <div>
-          <google-map [options]="googleMapOptions"></google-map>
+        <h1 class="info-wrapper__title">을왕리 해수욕장 {{ ocean.id }}</h1>
+        <span class="info-wrapper__addr">인천 중구 용유서로302번길 16-15</span>
+
+        <div class="info-wrapper__row">
+          <p class="info-wrapper__row__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum
+            non repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo
+            sunt fugit eos vero? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+            repellendus iusto a ipsum non repudiandae. Mollitia ab eveniet, animi, voluptatibus,
+            impedit modi sed ex minus quo sunt fugit eos vero?
+          </p>
+
+          <div>
+            <google-map [options]="googleMapOptions"></google-map>
+          </div>
         </div>
       </article>
 

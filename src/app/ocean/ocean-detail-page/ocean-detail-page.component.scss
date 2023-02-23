@@ -37,6 +37,20 @@
 
   &__title {
     @include heading-title;
+    margin-bottom: 6px;
+  }
+
+  &__addr {
+    display: block;
+    margin-bottom: 80px;
+  }
+
+  &__row {
+    display: flex;
+
+    &__content {
+      line-height: 200%;
+    }
   }
 }
 
