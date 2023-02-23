@@ -1,2 +1,12 @@
-<h1>{{ bakku.id }}</h1>
-<h1>{{ bakku.name }}</h1>
+<div class="wrapper" (click)="onCardClick()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ bakku.name }} - {{ bakku.ocean }}</mat-card-title>
+        <mat-card-subtitle>{{ bakku.date }}</mat-card-subtitle>
+        <img mat-card-sm-image src="{{ bakku.titleImage }}" />
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content> {{ bakku.cleanWeight }}kg을 가꿨어요. </mat-card-content>
+  </mat-card>
+</div>

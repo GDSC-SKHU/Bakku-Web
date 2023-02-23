@@ -9,19 +9,80 @@
   <div class="remainer"></div>
 
   <section class="wrapper">
-    <article class="wrapper__content">
-      <h1>을왕리 해수욕장</h1>
-      <span>{{ ocean.id }}</span>
-      <span>2022. 02. 02.</span>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum non
-        repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo sunt
-        fugit eos vero?
-      </p>
-      <div>
-        <google-map [options]="googleMapOptions"></google-map>
-      </div>
-    </article>
+    <div class="wrapper__content">
+      <article class="info-wrapper">
+        <h1 class="info-wrapper__title">을왕리 해수욕장</h1>
+        <span>{{ ocean.id }}</span>
+        <span>2022. 02. 02.</span>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum
+          non repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo
+          sunt fugit eos vero?
+        </p>
+        <div>
+          <google-map [options]="googleMapOptions"></google-map>
+        </div>
+      </article>
+
+      <article class="bakku-wrapper">
+        <h2 class="bakku-wrapper__title">이 바다를 가꾼 바꾸들</h2>
+
+        <app-bakku-card
+          [bakku]="{
+            id: 1,
+            ocean: '을왕리 해수욕장',
+            name: '성공회대 GDSC',
+            titleImage:
+              'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            date: '22. 02. 27.',
+            cleanWeight: 10
+          }"
+        />
+        <app-bakku-card
+          [bakku]="{
+            id: 1,
+            ocean: '을왕리 해수욕장',
+            name: '성공회대 GDSC',
+            titleImage:
+              'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            date: '22. 02. 27.',
+            cleanWeight: 10
+          }"
+        />
+        <app-bakku-card
+          [bakku]="{
+            id: 1,
+            ocean: '을왕리 해수욕장',
+            name: '성공회대 GDSC',
+            titleImage:
+              'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            date: '22. 02. 27.',
+            cleanWeight: 10
+          }"
+        />
+        <app-bakku-card
+          [bakku]="{
+            id: 1,
+            ocean: '을왕리 해수욕장',
+            name: '성공회대 GDSC',
+            titleImage:
+              'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            date: '22. 02. 27.',
+            cleanWeight: 10
+          }"
+        />
+        <app-bakku-card
+          [bakku]="{
+            id: 1,
+            ocean: '을왕리 해수욕장',
+            name: '성공회대 GDSC',
+            titleImage:
+              'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            date: '22. 02. 27.',
+            cleanWeight: 10
+          }"
+        />
+      </article>
+    </div>
   </section>
-  <app-bakku-card [bakku]="{ id: 1, name: 'sdf' }"></app-bakku-card>
 </main>

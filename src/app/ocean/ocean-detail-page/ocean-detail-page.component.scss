@@ -1,4 +1,5 @@
 @import "../../shared/mixins/layout.scss";
+@import "../../shared/mixins/typo.scss";
 
 .ocean-img-wrapper {
   position: fixed;
@@ -28,5 +29,23 @@
     overflow: hidden;
     padding-top: 20px;
     padding-bottom: 30px;
+  }
+}
+
+.info-wrapper {
+  margin-bottom: 100px;
+
+  &__title {
+    @include heading-title;
+  }
+}
+
+.bakku-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  &__title {
+    @include sub-title;
   }
 }
