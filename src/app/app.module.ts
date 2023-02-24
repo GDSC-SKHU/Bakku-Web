@@ -19,6 +19,7 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { LoginPageComponent } from "./pages/login-page/login-page.component";
 import { NotFoundPageComponent } from "./pages/not-found-page/not-found-page.component";
 import { RankingModule } from "./ranking/ranking.module";
+import { ComponentsModule } from "./shared/components/components.module";
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent, LoginPageComponent, NotFoundPageComponent],
@@ -36,6 +37,7 @@ import { RankingModule } from "./ranking/ranking.module";
     EventModule,
     BakkuModule,
     OceanModule,
+    ComponentsModule,
     AppRoutingModule,
   ],
   bootstrap: [AppComponent],
