@@ -4,3 +4,11 @@
   max-width: 1080px;
   padding: 0 16px;
 }
+
+@mixin disable-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+}

@@ -37,6 +37,7 @@ import { ComponentsModule } from "./shared/components/components.module";
     EventModule,
     BakkuModule,
     OceanModule,
+
     ComponentsModule,
     AppRoutingModule,
   ],
