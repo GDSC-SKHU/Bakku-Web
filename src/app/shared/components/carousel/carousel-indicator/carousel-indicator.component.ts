@@ -15,4 +15,8 @@ export class CarouselIndicatorComponent {
       this.itemCount = Array.from(Array(length).keys());
     });
   }
+
+  onIndicatorClick = (index: number) => {
+    this.carouselService.scrollToIndex(index);
+  };
 }

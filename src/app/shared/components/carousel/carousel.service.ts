@@ -11,11 +11,18 @@ export class CarouselService {
   private itemLengthSubject: Subject<number> = new Subject<number>();
   public itemLength$ = this.itemLengthSubject.asObservable();
 
+  private controledIndexSubject: Subject<number> = new Subject<number>();
+  public controledIndex$ = this.controledIndexSubject.asObservable();
+
   public setIndex = (index: number) => {
     this.currentIndex = index;
   };
 
   public setItemLength = (length: number) => {
     this.itemLengthSubject.next(length);
+  };
+
+  public scrollToIndex = (index: number) => {
+    this.controledIndexSubject.next(index);
   };
 }

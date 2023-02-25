@@ -12,7 +12,11 @@ export class CarouselWrapperComponent implements OnInit {
   constructor(
     private carouselService: CarouselService,
     private _elementRef: ElementRef<HTMLDivElement>,
-  ) {}
+  ) {
+    this.carouselService.controledIndex$.subscribe((controledIndex) => {
+      this.scrollToIndex(controledIndex);
+    });
+  }
 
   private scrollSubject = new Subject<HTMLElement>();
   private scroll$ = this.scrollSubject.asObservable().pipe(throttleTime(300));
@@ -32,4 +36,13 @@ export class CarouselWrapperComponent implements OnInit {
     const index = Math.floor(scrollLeft / offsetWidth);
     this.carouselService.setIndex(index);
   };
+
+  private scrollToIndex(controledIndex: number) {
+    const { offsetWidth } = this._elementRef.nativeElement;
+
+    this._elementRef.nativeElement.scrollTo({
+      left: controledIndex * offsetWidth,
+      behavior: "smooth",
+    });
+  }
 }
