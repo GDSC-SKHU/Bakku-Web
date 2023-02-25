@@ -1,17 +1,149 @@
 <main>
-  <app-carousel-wrapper>
-    <app-carousel-item>1</app-carousel-item>
-    <app-carousel-item>2</app-carousel-item>
-    <app-carousel-item> 3 </app-carousel-item>
+  <app-carousel-wrapper class="event-carousel">
+    <app-carousel-item class="event-carousel__item">
+      <h3 class="event-carousel__title">을왕리 어쩌구 축제</h3>
+    </app-carousel-item>
+    <app-carousel-item>
+      <h3 class="event-carousel__title">해운대 어쩌구 축제</h3>
+    </app-carousel-item>
+    <app-carousel-item>
+      <h3 class="event-carousel__title">강릉 어쩌구 축제</h3>
+    </app-carousel-item>
   </app-carousel-wrapper>
 
-  <app-ocean-card
-    [ocean]="{
-      id: 1,
-      name: '을왕리 해수욕장',
-      address: '주소 주소 주소',
-      imageUrl:
-        'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    }"
-  />
+  <section class="ocean">
+    <h2 class="ocean__title">가까운 바다를 찾아보세요.</h2>
+
+    <div class="ocean__card-wrapper">
+      <app-ocean-card
+        [ocean]="{
+          id: 1,
+          name: '을왕리 해수욕장',
+          address: '주소 주소 주소',
+          imageUrl:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        }"
+      />
+      <app-ocean-card
+        [ocean]="{
+          id: 1,
+          name: '을왕리 해수욕장',
+          address: '주소 주소 주소',
+          imageUrl:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        }"
+      />
+      <app-ocean-card
+        [ocean]="{
+          id: 1,
+          name: '을왕리 해수욕장',
+          address: '주소 주소 주소',
+          imageUrl:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        }"
+      />
+      <app-ocean-card
+        [ocean]="{
+          id: 1,
+          name: '을왕리 해수욕장',
+          address: '주소 주소 주소',
+          imageUrl:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        }"
+      />
+      <app-ocean-card
+        [ocean]="{
+          id: 1,
+          name: '을왕리 해수욕장',
+          address: '주소 주소 주소',
+          imageUrl:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        }"
+      />
+    </div>
+  </section>
+
+  <section class="bakku">
+    <h2 class="bakku__title">어떤 바꾸들이 있었을까요?</h2>
+
+    <div class="bakku__card-wrapper">
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+    </div>
+  </section>
 </main>

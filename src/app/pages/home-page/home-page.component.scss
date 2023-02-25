@@ -1,5 +1,50 @@
 @import "../../shared/mixins/layout.scss";
+@import "../../shared/mixins/typo.scss";
+@import "../../shared/mixins/material-like.scss";
 
 main {
   @include layout;
+  padding-top: 20px;
+}
+
+.event-carousel {
+  @include mat-like-box-shadow;
+  width: 100%;
+  height: 320px;
+
+  margin-bottom: 120px;
+
+  &__title {
+    @include sub-title;
+  }
+}
+
+.ocean {
+  margin-bottom: 140px;
+
+  &__title {
+    @include heading-title;
+    margin-bottom: 40px;
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.bakku {
+  margin-bottom: 140px;
+
+  &__title {
+    @include heading-title;
+    margin-bottom: 40px;
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }

@@ -1,6 +1,6 @@
 @import "../../mixins/layout.scss";
 
-section {
+:host {
   @include disable-scrollbar;
 
   width: 100%;
