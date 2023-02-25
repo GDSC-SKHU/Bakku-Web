@@ -1,5 +1,26 @@
+@use "@angular/material" as mat;
+@import "../../../mixins/theme.scss";
+
 :host {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 8px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: mat.get-color-from-palette($bakku-primary, 100);
+
+  transition: background-color 0.3s;
+
+  &--current {
+    background-color: mat.get-color-from-palette($bakku-primary, 500);
+  }
 }

@@ -1,4 +1,7 @@
-<div>
-  {{ carouselService.currentIndex }}
-  <div *ngFor="let index of itemCount">{{ index }}</div>
+<div class="wrapper">
+  <span
+    *ngFor="let index of itemCount"
+    class="indicator"
+    [ngClass]="{ 'indicator--current': index === carouselService.currentIndex }"
+  ></span>
 </div>
