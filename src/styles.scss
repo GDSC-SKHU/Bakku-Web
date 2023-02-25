@@ -21,6 +21,9 @@ a {
 }
 * {
   box-sizing: border-box;
+
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
 }
 
 mat-error,
