@@ -1,11 +1,11 @@
 <div (click)="onCardClick()">
   <mat-card>
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>{{ ocean.name }}</mat-card-title>
-        <mat-card-subtitle>{{ ocean.address }}</mat-card-subtitle>
-        <img mat-card-xl-image src="{{ ocean.imageUrl }}"
-      /></mat-card-title-group>
+    <div class="img-wrapper">
+      <img mat-card-image src="{{ ocean.imageUrl }}" />
+    </div>
+    <mat-card-header class="header">
+      <mat-card-title>{{ ocean.name }}</mat-card-title>
+      <mat-card-subtitle>{{ ocean.address }}</mat-card-subtitle>
     </mat-card-header>
   </mat-card>
 </div>
