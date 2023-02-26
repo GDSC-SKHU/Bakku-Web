@@ -1,0 +1,12 @@
+@import "../../shared/mixins/layout.scss";
+@import "../../shared/mixins/typo.scss";
+
+main {
+  @include layout;
+  padding-top: 10px;
+}
+
+.title {
+  @include heading-title;
+  margin-bottom: 40px;
+}

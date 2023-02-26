@@ -1,0 +1,21 @@
+<mat-form-field class="select" appearance="outline">
+  <mat-select [(ngModel)]="selectedSortTerm">
+    <mat-option *ngFor="let sortTerm of sortTerms" [value]="sortTerm.value">
+      {{ sortTerm.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<section class="card-wrapper">
+  <app-bakku-card
+    [bakku]="{
+      id: 1,
+      ocean: '을왕리 해수욕장',
+      name: '성공회대 GDSC',
+      titleImage:
+        'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      date: '22. 02. 27.',
+      cleanWeight: 10
+    }"
+  />
+</section>
