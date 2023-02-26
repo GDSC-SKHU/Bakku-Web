@@ -1,14 +1,12 @@
 <main>
   <section class="event">
-    <app-carousel-wrapper class="event__wrapper">
-      <app-carousel-item class="event__item">
-        <h3 class="event__item__title">을왕리 어쩌구 축제</h3>
-      </app-carousel-item>
-      <app-carousel-item class="event__item">
-        <h3 class="event__item__title">해운대 어쩌구 축제</h3>
-      </app-carousel-item>
-      <app-carousel-item class="event__item">
-        <h3 class="event__item__title">강릉 어쩌구 축제</h3>
+    <app-carousel-wrapper *ngIf="events$ | async as events" class="event__wrapper">
+      <app-carousel-item
+        *ngFor="let event of events"
+        (click)="onEventClick(event.id)"
+        class="event__item"
+      >
+        <h3 class="event__item__title">{{ event.name }}</h3>
       </app-carousel-item>
     </app-carousel-wrapper>
     <app-carousel-indicator />
