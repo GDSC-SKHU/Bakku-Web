@@ -1,0 +1,36 @@
+@import "../../shared/mixins/material-like.scss";
+
+:host {
+  @include mat-like-border;
+  width: 100%;
+  overflow: hidden;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+}
+
+.preview-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__clear-btn {
+    position: absolute;
+    right: 0.625rem;
+    bottom: 0.75rem;
+  }
+}
