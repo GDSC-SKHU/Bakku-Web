@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit } from "@angular/core";
 import { Subject, throttleTime } from "rxjs";
 
 import { CarouselService } from "../carousel.service";
@@ -8,7 +8,7 @@ import { CarouselService } from "../carousel.service";
   templateUrl: "./carousel-wrapper.component.html",
   styleUrls: ["./carousel-wrapper.component.scss"],
 })
-export class CarouselWrapperComponent implements OnInit {
+export class CarouselWrapperComponent implements OnInit, AfterViewInit {
   constructor(
     private carouselService: CarouselService,
     private _elementRef: ElementRef<HTMLDivElement>,
@@ -28,7 +28,10 @@ export class CarouselWrapperComponent implements OnInit {
 
   ngOnInit() {
     this.scroll$.subscribe((ref) => this.onThrottledScroll(ref));
-    this.carouselService.setItemLength(this._elementRef.nativeElement.childNodes.length);
+  }
+
+  ngAfterViewInit() {
+    this.carouselService.setItemLength(this._elementRef.nativeElement.children.length);
   }
 
   private onThrottledScroll = (ref: HTMLElement) => {
