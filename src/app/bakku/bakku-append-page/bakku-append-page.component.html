@@ -1,4 +1,6 @@
 <main>
+  <h1 class="title">바다를 가꾼 기록을 공유해 주세요.</h1>
+
   <form [formGroup]="bakkuForm" class="bakku-form" (ngSubmit)="onSubmit()">
     <app-image-input-with-preview
       class="title-image-wrapper"
@@ -7,6 +9,8 @@
       text="대표 사진 올리기*"
       [required]="true"
     />
+
+    <h2 class="sub-title">여러분의 노력으로 얼마나 바뀌게 되었나요?</h2>
 
     <div class="row">
       <app-image-input-with-preview
@@ -24,6 +28,8 @@
         [required]="true"
       />
     </div>
+
+    <h2 class="sub-title">더욱 자세히 알려주세요.</h2>
 
     <mat-form-field appearance="outline">
       <mat-label>이름</mat-label>
@@ -54,7 +60,7 @@
     </div>
 
     <mat-form-field appearance="outline">
-      <mat-label>청소한 양</mat-label>
+      <mat-label>청소한 양 (kg)</mat-label>
       <input matInput type="number" formControlName="cleanWeight" />
       <mat-error *ngIf="getFormControl('cleanWeight')?.invalid">{{
         getErrorMsg("cleanWeight")

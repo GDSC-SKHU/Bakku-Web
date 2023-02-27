@@ -1,12 +1,23 @@
+@import "../../shared/mixins/typo.scss";
 @import "../../shared/mixins/layout.scss";
 @import "../../shared/mixins/material-like.scss";
 
 main {
   @include layout;
   padding-top: 20px;
+  padding-bottom: 60px;
 
   display: flex;
   flex-direction: column;
+}
+
+.title {
+  @include heading-title;
+  margin-bottom: 40px;
+}
+
+.sub-title {
+  @include sub-title;
 }
 
 .bakku-form {
@@ -16,8 +27,7 @@ main {
 
   &__submit-btn {
     align-self: flex-end;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 20px;
     width: 200px;
   }
 }
