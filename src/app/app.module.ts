@@ -3,6 +3,10 @@ import { NgModule } from "@angular/core";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule, PERSISTENCE, USE_DEVICE_LANGUAGE } from "@angular/fire/compat/auth";
 import { AngularFireAuthGuardModule } from "@angular/fire/compat/auth-guard";
+import {
+  AngularFirePerformanceModule,
+  PerformanceMonitoringService,
+} from "@angular/fire/compat/performance";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -33,6 +37,7 @@ import { httpInterceptorProviders } from "./shared/http-interceptors";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireAuthGuardModule,
+    AngularFirePerformanceModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -48,6 +53,7 @@ import { httpInterceptorProviders } from "./shared/http-interceptors";
     httpInterceptorProviders,
     { provide: USE_DEVICE_LANGUAGE, useValue: true },
     { provide: PERSISTENCE, useValue: "local" },
+    PerformanceMonitoringService,
   ],
 })
 export class AppModule {}
