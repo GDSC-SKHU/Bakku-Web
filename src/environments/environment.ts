@@ -13,6 +13,7 @@ export const environment = {
     measurementId: "G-6TCSF6D0C9",
   },
   production: false,
+  apiUrl: "https://bakku-dev.duckdns.org/api/v1",
 };
 
 /*
