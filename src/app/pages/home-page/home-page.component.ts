@@ -1,23 +1,26 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { of } from "rxjs";
-
-const MOCK_EVENTS = [
-  { id: 1, name: "을왕리 어쩌구 축제" },
-  { id: 2, name: "을왕리 어쩌구 축제" },
-];
+import { Event, EventService } from "src/app/event/event.service";
 
 @Component({
   selector: "app-home-page",
   templateUrl: "./home-page.component.html",
   styleUrls: ["./home-page.component.scss"],
 })
-export class HomePageComponent {
-  constructor(private router: Router) {}
+export class HomePageComponent implements OnInit {
+  constructor(private router: Router, private eventService: EventService) {}
 
-  events$ = of(MOCK_EVENTS);
+  events: Event[] = [];
 
-  onEventClick = (id: number) => {
+  onEventClick(id: number) {
     this.router.navigate(["event", id]);
-  };
+  }
+
+  ngOnInit() {
+    this.getEvents();
+  }
+
+  getEvents() {
+    this.eventService.getEvents().subscribe((res) => (this.events = res.content));
+  }
 }

@@ -1,6 +1,6 @@
 <main>
   <section class="event">
-    <app-carousel-wrapper *ngIf="events$ | async as events" class="event__wrapper">
+    <app-carousel-wrapper *ngIf="events.length" class="event__wrapper">
       <app-carousel-item
         *ngFor="let event of events"
         (click)="onEventClick(event.id)"
