@@ -5,14 +5,11 @@ import { mergeMap, Observable } from "rxjs";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private auth: AngularFireAuth) {
-    console.log("auth interceptor");
-  }
+  constructor(private auth: AngularFireAuth) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return this.auth.idToken.pipe(
       mergeMap((token) => {
-        console.log(token);
         if (token) {
           req = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
         }
