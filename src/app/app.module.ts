@@ -1,3 +1,4 @@
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule, PERSISTENCE, USE_DEVICE_LANGUAGE } from "@angular/fire/compat/auth";
@@ -20,12 +21,14 @@ import { LoginPageComponent } from "./pages/login-page/login-page.component";
 import { NotFoundPageComponent } from "./pages/not-found-page/not-found-page.component";
 import { RankingModule } from "./ranking/ranking.module";
 import { ComponentsModule } from "./shared/components/components.module";
+import { httpInterceptorProviders } from "./shared/http-interceptors";
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent, LoginPageComponent, NotFoundPageComponent],
   imports: [
     FontAwesomeModule,
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -37,12 +40,12 @@ import { ComponentsModule } from "./shared/components/components.module";
     EventModule,
     BakkuModule,
     OceanModule,
-
     ComponentsModule,
     AppRoutingModule,
   ],
   bootstrap: [AppComponent],
   providers: [
+    httpInterceptorProviders,
     { provide: USE_DEVICE_LANGUAGE, useValue: true },
     { provide: PERSISTENCE, useValue: "local" },
   ],
