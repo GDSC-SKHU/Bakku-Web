@@ -23,4 +23,8 @@ export class EventService {
   getEvents() {
     return this.http.get<Paging<Event>>("/events");
   }
+
+  getEventById(id: string | number) {
+    return this.http.get<Event>(`/events/${id}`);
+  }
 }

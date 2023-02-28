@@ -1,10 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, ParamMap } from "@angular/router";
-import { Observable, of, switchMap } from "rxjs";
+import { Observable, switchMap } from "rxjs";
 
-interface Event {
-  id: string;
-}
+import { Event, EventService } from "../event.service";
 
 @Component({
   selector: "app-event-detail-page",
@@ -14,12 +12,14 @@ interface Event {
 export class EventDetailPageComponent implements OnInit {
   declare event$: Observable<Event>;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private eventService: EventService) {}
 
   ngOnInit() {
-    // TODO: service get 로직으로 변경
     this.event$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => of({ id: params.get("id")! })),
+      switchMap((params: ParamMap) => {
+        const id = params.get("id")!;
+        return this.eventService.getEventById(id);
+      }),
     );
   }
 }
