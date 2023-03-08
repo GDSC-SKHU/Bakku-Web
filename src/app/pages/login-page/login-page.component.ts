@@ -3,6 +3,7 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Router } from "@angular/router";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import firebase from "firebase/compat/app";
+
 @Component({
   selector: "app-login-page",
   templateUrl: "./login-page.component.html",
@@ -15,6 +16,7 @@ export class LoginPageComponent {
 
   async login() {
     await this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+
     this.router.navigate(["/"]);
   }
 

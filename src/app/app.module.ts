@@ -19,6 +19,7 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { BakkuModule } from "./bakku/bakku.module";
 import { EventModule } from "./event/event.module";
+import { MypageModule } from "./mypage/mypage.module";
 import { OceanModule } from "./ocean/ocean.module";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { LoginPageComponent } from "./pages/login-page/login-page.component";
@@ -45,6 +46,7 @@ import { httpInterceptorProviders } from "./shared/http-interceptors";
     EventModule,
     BakkuModule,
     OceanModule,
+    MypageModule,
     ComponentsModule,
     AppRoutingModule,
   ],
