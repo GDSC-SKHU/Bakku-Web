@@ -28,6 +28,27 @@
       >
         <mat-icon fontIcon="add" aria-label="post bakku" />
       </a>
+
+      <a
+        *ngIf="auth.user | async as user; else notLogged"
+        mat-icon-button
+        routerLink="/mypage"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <mat-icon fontIcon="person" aria-label="post bakku" />
+      </a>
+
+      <ng-template #notLogged>
+        <a
+          mat-icon-button
+          routerLink="/login"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+        >
+          <mat-icon fontIcon="login" aria-label="post bakku" />
+        </a>
+      </ng-template>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
