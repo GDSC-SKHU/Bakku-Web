@@ -1,1 +1,13 @@
-<p>mypage works!</p>
+<main>
+  <section>
+    <div *ngIf="auth.user | async as user">
+      <p>{{ user.displayName }}</p>
+      <p>{{ user.email }}</p>
+      <p>{{ user.uid }}</p>
+
+      <img src="{{ user.photoURL }}" />
+    </div>
+  </section>
+
+  <button (click)="logout()">로그아웃</button>
+</main>
