@@ -1,13 +1,64 @@
 <main>
-  <section>
-    <div *ngIf="auth.user | async as user">
-      <p>{{ user.displayName }}</p>
-      <p>{{ user.email }}</p>
-      <p>{{ user.uid }}</p>
+  <section *ngIf="auth.user | async as user" class="user">
+    <button class="user__logout-btn" mat-flat-button color="primary" (click)="logout()">
+      로그아웃
+    </button>
 
+    <div class="user__img-wrapper">
       <img src="{{ user.photoURL }}" />
     </div>
+    <h1 class="user__heading">반가워요. {{ user.displayName }}님</h1>
+    <span>{{ user.email }}</span>
   </section>
 
-  <button (click)="logout()">로그아웃</button>
+  <section class="bakkus">
+    <h2 class="bakkus__heading">내 기록들</h2>
+
+    <div class="bakkus__wrapper">
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+      <app-bakku-card
+        [bakku]="{
+          id: 1,
+          ocean: '을왕리 해수욕장',
+          name: '성공회대 GDSC',
+          titleImage:
+            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          date: '22. 02. 27.',
+          cleanWeight: 10
+        }"
+      />
+    </div>
+  </section>
 </main>
