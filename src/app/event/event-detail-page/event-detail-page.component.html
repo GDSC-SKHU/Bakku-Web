@@ -4,22 +4,27 @@
       class="ocean-img"
       src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     />
+    <!-- <img class="ocean-img" src="{{ event.imageUrl }}" /> -->
   </section>
 
   <div class="remainer"></div>
 
   <section class="wrapper">
-    <article class="wrapper__content">
-      <h1>{{ event.name }}</h1>
-      <span>{{ event.startDate | date }} ~ {{ event.endDate | date }}</span>
-      <p>
-        {{ event.comment }}
-      </p>
-      <div>
+    <div class="wrapper__content">
+      <article class="info">
+        <h1 class="info__heading">{{ event.name }}</h1>
+        <span class="info__date">{{ event.startDate | date }} ~ {{ event.endDate | date }}</span>
+        <p class="info__description">
+          {{ event.comment }}
+        </p>
+
         <google-map
+          width="100%"
+          height="400px"
+          class="info__map-wrapper__map"
           [options]="{ center: { lat: event.latitude, lng: event.longitude }, zoom: 14 }"
         ></google-map>
-      </div>
-    </article>
+      </article>
+    </div>
   </section>
 </main>
