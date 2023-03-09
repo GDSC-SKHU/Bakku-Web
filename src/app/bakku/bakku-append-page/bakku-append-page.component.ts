@@ -3,13 +3,15 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ImageInput } from "src/app/shared/class/image-input";
 
+import { BakkuService } from "../bakku.service";
+
 @Component({
   selector: "app-bakku-append-page",
   templateUrl: "./bakku-append-page.component.html",
   styleUrls: ["./bakku-append-page.component.scss"],
 })
 export class BakkuAppendPageComponent {
-  constructor(public auth: AngularFireAuth) {}
+  constructor(public auth: AngularFireAuth, private bakkuService: BakkuService) {}
 
   titleImage = new ImageInput();
   beforeImage = new ImageInput();
