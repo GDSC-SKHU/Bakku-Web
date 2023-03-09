@@ -14,7 +14,7 @@
   <section class="bakkus">
     <h2 class="bakkus__heading">내 기록들</h2>
 
-    <div class="bakkus__wrapper">
+    <div *ngIf="!isEmpty" class="bakkus__wrapper">
       <app-bakku-card
         [bakku]="{
           id: 1,
@@ -59,6 +59,19 @@
           cleanWeight: 10
         }"
       />
+    </div>
+
+    <div *ngIf="isEmpty" class="bakkus--empty">
+      <span>올린 바꾸가 없어요</span>
+      <a
+        mat-raised-button
+        color="primary"
+        routerLink="/bakku/append"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        바꾸 올리러 가기
+      </a>
     </div>
   </section>
 </main>

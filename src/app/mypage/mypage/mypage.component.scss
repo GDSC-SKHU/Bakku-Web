@@ -55,4 +55,18 @@ main {
     flex-direction: column;
     gap: 20px;
   }
+
+  &--empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 400px;
+
+    & > span {
+      @include sub-title;
+      margin-bottom: 40px;
+    }
+  }
 }
