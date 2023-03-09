@@ -17,48 +17,12 @@
 
     <div class="ocean__card-wrapper">
       <app-ocean-card
+        *ngFor="let ocean of oceans"
         [ocean]="{
-          id: 1,
-          name: '을왕리 해수욕장',
-          address: '주소 주소 주소',
-          imageUrl:
-            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        }"
-      />
-      <app-ocean-card
-        [ocean]="{
-          id: 1,
-          name: '을왕리 해수욕장',
-          address: '주소 주소 주소',
-          imageUrl:
-            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        }"
-      />
-      <app-ocean-card
-        [ocean]="{
-          id: 1,
-          name: '을왕리 해수욕장',
-          address: '주소 주소 주소',
-          imageUrl:
-            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        }"
-      />
-      <app-ocean-card
-        [ocean]="{
-          id: 1,
-          name: '을왕리 해수욕장',
-          address: '주소 주소 주소',
-          imageUrl:
-            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        }"
-      />
-      <app-ocean-card
-        [ocean]="{
-          id: 1,
-          name: '을왕리 해수욕장',
-          address: '주소 주소 주소',
-          imageUrl:
-            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          id: ocean.id,
+          name: ocean.name,
+          address: ocean.address,
+          imageUrl: ocean.imageUrl
         }"
       />
     </div>

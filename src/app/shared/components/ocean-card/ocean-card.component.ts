@@ -20,6 +20,6 @@ export class OceanCardComponent {
   constructor(private router: Router) {}
 
   onCardClick = () => {
-    this.router.navigate(["ocean", 1]);
+    this.router.navigate(["ocean", this.ocean.id]);
   };
 }
