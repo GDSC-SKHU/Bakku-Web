@@ -1,9 +1,6 @@
 <main *ngIf="ocean$ | async as ocean">
   <section class="ocean-img-wrapper">
-    <img
-      class="ocean-img"
-      src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    />
+    <img class="ocean-img" src="{{ ocean.imageUrl }}" />
   </section>
 
   <div class="remainer"></div>
@@ -11,8 +8,8 @@
   <section class="wrapper">
     <div class="wrapper__content">
       <article class="info-wrapper">
-        <h1 class="info-wrapper__title">을왕리 해수욕장 {{ ocean.id }}</h1>
-        <span class="info-wrapper__addr">인천 중구 용유서로302번길 16-15</span>
+        <h1 class="info-wrapper__title">{{ ocean.name }} {{ ocean.id }}</h1>
+        <span class="info-wrapper__addr">{{ ocean.address }}</span>
 
         <div class="info-wrapper__row">
           <p class="info-wrapper__row__content">
@@ -24,7 +21,9 @@
           </p>
 
           <div>
-            <google-map [options]="googleMapOptions"></google-map>
+            <google-map
+              [options]="{ center: { lat: ocean.latitude, lng: ocean.longitude }, zoom: 14 }"
+            ></google-map>
           </div>
         </div>
       </article>

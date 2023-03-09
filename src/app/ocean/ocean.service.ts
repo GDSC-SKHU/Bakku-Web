@@ -47,4 +47,8 @@ export class OceanService {
   getOceansByPosition({ lat, lon }: Position) {
     return this.http.get<Paging<Ocean>>(`/oceans?lat=${lat}&lon=${lon}`);
   }
+
+  getOceanById(id: string) {
+    return this.http.get<Ocean>(`/oceans/${id}`);
+  }
 }
