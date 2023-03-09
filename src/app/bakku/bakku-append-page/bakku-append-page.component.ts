@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Ocean, OceanService } from "src/app/ocean/ocean.service";
 import { ImageInput } from "src/app/shared/class/image-input";
 
 import { BakkuService } from "../bakku.service";
@@ -10,8 +11,14 @@ import { BakkuService } from "../bakku.service";
   templateUrl: "./bakku-append-page.component.html",
   styleUrls: ["./bakku-append-page.component.scss"],
 })
-export class BakkuAppendPageComponent {
-  constructor(public auth: AngularFireAuth, private bakkuService: BakkuService) {}
+export class BakkuAppendPageComponent implements OnInit {
+  constructor(
+    public auth: AngularFireAuth,
+    private bakkuService: BakkuService,
+    private oceanService: OceanService,
+  ) {}
+
+  oceans: Ocean[] = [];
 
   titleImage = new ImageInput();
   beforeImage = new ImageInput();
@@ -49,9 +56,18 @@ export class BakkuAppendPageComponent {
   });
 
   onSubmit = () => {
-    // TODO: service post > redirect
     console.log(this.bakkuForm.value);
   };
+
+  getOceans() {
+    this.oceanService
+      .getCurrentPosition()
+      .subscribe(({ lat, lon }) =>
+        this.oceanService
+          .getOceansByPosition({ lat, lon })
+          .subscribe((res) => (this.oceans = res.content)),
+      );
+  }
 
   getFormControl = (valueName: keyof typeof this.bakkuForm.value) => {
     return this.bakkuForm.get(valueName);
@@ -70,4 +86,8 @@ export class BakkuAppendPageComponent {
 
     return "입력 값을 확인해 주세요.";
   };
+
+  ngOnInit() {
+    this.getOceans();
+  }
 }
