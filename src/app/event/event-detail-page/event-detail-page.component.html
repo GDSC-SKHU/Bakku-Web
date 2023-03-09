@@ -10,15 +10,15 @@
 
   <section class="wrapper">
     <article class="wrapper__content">
-      <h1>{{ event.id }}</h1>
-      <span>2022. 02. 02.</span>
+      <h1>{{ event.name }}</h1>
+      <span>{{ event.startDate | date }} ~ {{ event.endDate | date }}</span>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus iusto a ipsum non
-        repudiandae. Mollitia ab eveniet, animi, voluptatibus, impedit modi sed ex minus quo sunt
-        fugit eos vero?
+        {{ event.comment }}
       </p>
       <div>
-        <google-map></google-map>
+        <google-map
+          [options]="{ center: { lat: event.latitude, lng: event.longitude }, zoom: 14 }"
+        ></google-map>
       </div>
     </article>
   </section>

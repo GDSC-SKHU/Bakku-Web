@@ -16,7 +16,10 @@ export class OceanDetailPageComponent implements OnInit {
 
   ngOnInit() {
     this.ocean$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.oceanService.getOceanById(params.get("id")!)),
+      switchMap((params: ParamMap) => {
+        const id = params.get("id")!;
+        return this.oceanService.getOceanById(id);
+      }),
     );
   }
 }
