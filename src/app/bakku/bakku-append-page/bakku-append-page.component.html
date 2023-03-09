@@ -33,18 +33,22 @@
 
     <mat-form-field appearance="outline">
       <mat-label>이름</mat-label>
-      <input matInput formControlName="name" />
-      <mat-error *ngIf="getFormControl('name')?.invalid">{{ getErrorMsg("name") }}</mat-error>
+      <input matInput formControlName="groupName" />
+      <mat-error *ngIf="getFormControl('groupName')?.invalid">{{
+        getErrorMsg("groupName")
+      }}</mat-error>
     </mat-form-field>
 
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>해수욕장</mat-label>
-        <mat-select formControlName="ocean">
+        <mat-select formControlName="oceanId">
           <mat-option *ngFor="let ocean of oceans" [value]="ocean.id">{{ ocean.name }}</mat-option>
         </mat-select>
 
-        <mat-error *ngIf="getFormControl('ocean')?.invalid">{{ getErrorMsg("ocean") }}</mat-error>
+        <mat-error *ngIf="getFormControl('oceanId')?.invalid">{{
+          getErrorMsg("oceanId")
+        }}</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">

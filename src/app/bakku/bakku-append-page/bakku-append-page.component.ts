@@ -48,15 +48,20 @@ export class BakkuAppendPageComponent implements OnInit {
   };
 
   bakkuForm = new FormGroup({
-    name: new FormControl("", [Validators.required]),
-    ocean: new FormControl("", [Validators.required]),
+    groupName: new FormControl("", [Validators.required]),
+    oceanId: new FormControl("", [Validators.required]),
     date: new FormControl<Date>(new Date(), [Validators.required]),
     cleanWeight: new FormControl(0, [Validators.required]),
     comment: new FormControl(""),
   });
 
   onSubmit = () => {
-    console.log(this.bakkuForm.value);
+    const formData = new FormData();
+    Object.keys(this.bakkuForm.controls).forEach((controlName) => {
+      formData.append(controlName, this.bakkuForm.get(controlName)?.value);
+    });
+
+    this.bakkuService.postBakku(formData);
   };
 
   getOceans() {

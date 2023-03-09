@@ -14,16 +14,14 @@ export interface Bakku {
   oceanName: string;
 }
 
-type PostBakkuBody = Omit<Bakku, "id" | "oceanName">;
-
 @Injectable({
   providedIn: "root",
 })
 export class BakkuService {
   constructor(private http: HttpClient) {}
 
-  postBakku(body: PostBakkuBody) {
-    return this.http.post<PostBakkuBody>("/bakkus", { body });
+  postBakku(data: FormData) {
+    return this.http.post("/bakkus", data, { headers: { "Content-Type": "multipart/form-data" } });
   }
 
   getBakkusByUid(uid: string) {
