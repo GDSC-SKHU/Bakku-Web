@@ -27,4 +27,8 @@ export class BakkuService {
   getBakkusByUid(uid: string) {
     return this.http.get<Paging<Bakku>>(`/bakkus?uid=${uid}`);
   }
+
+  getBakkusByOceanId(oceanId: number) {
+    return this.http.get<Paging<Bakku>>(`/bakkus?oid=${oceanId}`);
+  }
 }

@@ -1,54 +1,25 @@
 <mat-form-field class="select" appearance="outline">
-  <mat-select [(ngModel)]="selectedOcean">
-    <mat-option *ngFor="let ocean of oceans" [value]="ocean.value">
-      {{ ocean.viewValue }}
+  <mat-select [ngModel]="selectedOcean$ | async" (ngModelChange)="onSelectOceanChange($event)">
+    <mat-option *ngFor="let ocean of oceans" [value]="ocean.id">
+      {{ ocean.name }}
     </mat-option>
   </mat-select>
 </mat-form-field>
 
-<section class="card-wrapper">
+<section class="card-wrapper" *ngIf="!isEmpty">
   <app-bakku-card
+    *ngFor="let bakku of bakkus"
     [bakku]="{
-      id: 1,
-      ocean: '을왕리 해수욕장',
-      name: '성공회대 GDSC',
-      titleImage:
-        'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      date: '22. 02. 27.',
-      cleanWeight: 10
+      id: bakku.id,
+      ocean: bakku.oceanName,
+      name: bakku.groupName,
+      titleImage: bakku.titleImageUrl,
+      date: bakku.decorateTime,
+      cleanWeight: bakku.cleanWeight
     }"
   />
-  <app-bakku-card
-    [bakku]="{
-      id: 1,
-      ocean: '을왕리 해수욕장',
-      name: '성공회대 GDSC',
-      titleImage:
-        'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      date: '22. 02. 27.',
-      cleanWeight: 10
-    }"
-  />
-  <app-bakku-card
-    [bakku]="{
-      id: 1,
-      ocean: '을왕리 해수욕장',
-      name: '성공회대 GDSC',
-      titleImage:
-        'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      date: '22. 02. 27.',
-      cleanWeight: 10
-    }"
-  />
-  <app-bakku-card
-    [bakku]="{
-      id: 1,
-      ocean: '을왕리 해수욕장',
-      name: '성공회대 GDSC',
-      titleImage:
-        'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      date: '22. 02. 27.',
-      cleanWeight: 10
-    }"
-  />
+</section>
+
+<section class="empty" *ngIf="isEmpty">
+  <span>해당하는 바꾸가 없어요</span>
 </section>
