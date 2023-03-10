@@ -1,5 +1,6 @@
 @import "../../shared/mixins/layout.scss";
 @import "../../shared/mixins/typo.scss";
+@import "../../shared/mixins/material-like.scss";
 
 .ocean-img-wrapper {
   position: fixed;
@@ -23,6 +24,7 @@
 .wrapper {
   width: 100%;
   background-color: white;
+  @include mat-like-box-shadow;
 
   &__content {
     @include layout;
