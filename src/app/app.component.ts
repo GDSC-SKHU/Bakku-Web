@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Component } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 
@@ -7,11 +8,11 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "bakku";
+  isMobile: boolean = false;
 
-  constructor(public auth: AngularFireAuth) {}
-
-  logout() {
-    this.auth.signOut();
+  constructor(public auth: AngularFireAuth, breakpointObserver: BreakpointObserver) {
+    breakpointObserver
+      .observe([Breakpoints.XSmall])
+      .subscribe(({ matches }) => (this.isMobile = matches));
   }
 }
