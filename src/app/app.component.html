@@ -1,69 +1,92 @@
-<mat-drawer-container>
-  <mat-drawer #drawer mode="over" position="end">content</mat-drawer>
-  <mat-drawer-content>
-    <mat-toolbar color="primary" class="toolbar">
-      <mat-toolbar-row class="toolbar__row">
+<!-- <mat-drawer-container>
+  <mat-drawer #drawer mode="over" position="end" class="drawer">content</mat-drawer> -->
+
+<!-- <mat-drawer-content> -->
+<mat-toolbar color="primary" class="toolbar">
+  <mat-toolbar-row class="toolbar__row">
+    <a
+      mat-flat-button
+      color="primary"
+      routerLink="/home"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <h1 class="toolbar__row__heading">바꾸</h1>
+    </a>
+
+    <div *ngIf="!isMobile">
+      <a
+        mat-icon-button
+        routerLink="/ranking"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <mat-icon fontIcon="data_thresholding" aria-label="ranking"></mat-icon>
+      </a>
+
+      <a
+        mat-icon-button
+        routerLink="/bakku/append"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <mat-icon fontIcon="add" aria-label="post bakku" />
+      </a>
+
+      <a
+        *ngIf="auth.user | async as user; else notLogged"
+        mat-icon-button
+        routerLink="/mypage"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <mat-icon fontIcon="person" aria-label="post bakku" />
+      </a>
+
+      <ng-template #notLogged>
         <a
-          mat-flat-button
-          color="primary"
-          routerLink="/home"
+          mat-icon-button
+          routerLink="/login"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
         >
-          <h1 class="toolbar__row__heading">바꾸</h1>
+          <mat-icon fontIcon="login" aria-label="post bakku" />
         </a>
+      </ng-template>
+    </div>
 
-        <div *ngIf="!isMobile">
-          <a
-            mat-icon-button
-            routerLink="/ranking"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-          >
-            <mat-icon fontIcon="data_thresholding" aria-label="ranking"></mat-icon>
-          </a>
+    <div *ngIf="isMobile">
+      <!-- <button mat-icon-button (click)="drawer.toggle()"> -->
+      <button mat-icon-button>
+        <mat-icon fontIcon="menu" aria-lable="menu" />
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-          <a
-            mat-icon-button
-            routerLink="/bakku/append"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-          >
-            <mat-icon fontIcon="add" aria-label="post bakku" />
-          </a>
+<div class="toolbar__remainer"></div>
 
-          <a
-            *ngIf="auth.user | async as user; else notLogged"
-            mat-icon-button
-            routerLink="/mypage"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-          >
-            <mat-icon fontIcon="person" aria-label="post bakku" />
-          </a>
+<router-outlet></router-outlet>
 
-          <ng-template #notLogged>
-            <a
-              mat-icon-button
-              routerLink="/login"
-              routerLinkActive="active"
-              ariaCurrentWhenActive="page"
-            >
-              <mat-icon fontIcon="login" aria-label="post bakku" />
-            </a>
-          </ng-template>
-        </div>
+<mat-toolbar *ngIf="isMobile" color="primary" class="bottom-navigation">
+  <mat-toolbar-row class="bottom-navigation__row">
+    <a mat-icon-button routerLink="/ranking" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <mat-icon fontIcon="data_thresholding" aria-label="ranking"></mat-icon>
+    </a>
 
-        <div *ngIf="isMobile">
-          <button mat-icon-button (click)="drawer.toggle()">
-            <mat-icon fontIcon="menu" aria-lable="menu" />
-          </button>
-        </div>
-      </mat-toolbar-row>
-    </mat-toolbar>
+    <a mat-icon-button routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <mat-icon fontIcon="home" aria-label="home" />
+    </a>
 
-    <div class="toolbar__remainer"></div>
-
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+    <a
+      mat-icon-button
+      routerLink="/bakku/append"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <mat-icon fontIcon="add" aria-label="post bakku" />
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- </mat-drawer-content>
+</mat-drawer-container> -->
