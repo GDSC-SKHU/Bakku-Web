@@ -7,17 +7,7 @@
 </mat-form-field>
 
 <section class="card-wrapper" *ngIf="!isEmpty">
-  <app-bakku-card
-    *ngFor="let bakku of bakkus"
-    [bakku]="{
-      id: bakku.id,
-      ocean: bakku.oceanName,
-      name: bakku.groupName,
-      titleImage: bakku.titleImageUrl,
-      date: bakku.decorateTime,
-      cleanWeight: bakku.cleanWeight
-    }"
-  />
+  <app-bakku-card *ngFor="let bakku of bakkus" [bakku]="bakku" />
 </section>
 
 <section class="empty" *ngIf="isEmpty">
