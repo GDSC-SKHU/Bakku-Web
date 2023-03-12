@@ -1,8 +1,6 @@
 <main *ngIf="bakku$ | async as bakku">
   <section class="title-image-wrapper">
-    <img
-      src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    />
+    <img src="{{ bakku.titleImageUrl }}" alt="{{ bakku.oceanName }} - {{ bakku.groupName }}" />
 
     <button mat-mini-fab color="warn" (click)="openDialog()">
       <mat-icon>gavel</mat-icon>
@@ -11,9 +9,9 @@
 
   <section class="title-wrapper">
     <h1 class="title-wrapper__title">
-      <a routerLink="/ocean/1">을왕리 해수욕장 {{ bakku.id }}</a> - 성공회대 GDSC
+      <a routerLink="/ocean/1">{{ bakku.oceanName }}</a> - {{ bakku.groupName }}
     </h1>
-    <span class="title-wrapper__date">2022. 02. 23.</span>
+    <span class="title-wrapper__date">{{ bakku.decorateTime }}</span>
   </section>
 
   <section class="info-wrapper">
@@ -22,14 +20,14 @@
     <article class="info">
       <div class="info__weight">
         <mat-icon class="info__weight__icon">delete</mat-icon>
-        <span class="info__weight__text"><strong>30kg</strong>을 치웠어요.</span>
+        <span class="info__weight__text"
+          ><strong>{{ bakku.cleanWeight }}kg</strong>을 치웠어요.</span
+        >
       </div>
 
       <div class="info__description">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, adipisci. Laudantium
-          in provident eaque natus non iusto ipsum animi vero soluta nihil! Nemo consequatur,
-          ratione maiores atque molestiae ea deserunt.
+          {{ bakku.comment }}
         </p>
       </div>
     </article>
@@ -39,15 +37,17 @@
     <h2 class="what-happened__title">어떤 일이 일어났을까요?</h2>
 
     <div class="what-happened__img-section">
-      <div class="what-happened__img-section__img-wrapper">
+      <div *ngIf="bakku.beforeImageUrl" class="what-happened__img-section__img-wrapper">
         <img
-          src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="{{ bakku.beforeImageUrl }}"
+          alt="{{ bakku.oceanName }} - {{ bakku.groupName }} before clean"
         />
       </div>
 
       <div class="what-happened__img-section__img-wrapper">
         <img
-          src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="{{ bakku.oceanName }} - {{ bakku.groupName }} after clean"
+          src="{{ bakku.afterImageUrl }}"
         />
       </div>
     </div>

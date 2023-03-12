@@ -24,6 +24,10 @@ export class BakkuService {
     return this.http.post("/bakkus", data, { headers: { "Content-Type": "multipart/form-data" } });
   }
 
+  getBakkuById(id: number) {
+    return this.http.get<Bakku>(`/bakkus/${id}`);
+  }
+
   getBakkusByUid(uid: string) {
     return this.http.get<Paging<Bakku>>(`/bakkus?uid=${uid}`);
   }
