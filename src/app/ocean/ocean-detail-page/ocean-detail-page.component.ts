@@ -13,6 +13,7 @@ import { Ocean, OceanService } from "../ocean.service";
 export class OceanDetailPageComponent implements OnInit {
   declare ocean$: Observable<Ocean>;
   bakkus: Bakku[] = [];
+  isEmpty = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,10 +25,23 @@ export class OceanDetailPageComponent implements OnInit {
     this.route.paramMap.pipe(switchMap((params: ParamMap) => params.get("id")!)).subscribe((id) => {
       const numberId = Number(id);
 
-      this.ocean$ = this.oceanService.getOceanById(numberId);
-      this.bakkuService
-        .getBakkusByOceanId(numberId)
-        .subscribe((res) => (this.bakkus = res.content));
+      this.getOceanById(numberId);
+      this.getBakkuByOceanId(numberId);
+    });
+  }
+
+  getOceanById(id: number) {
+    this.ocean$ = this.oceanService.getOceanById(id);
+  }
+
+  getBakkuByOceanId(oceanId: number) {
+    this.bakkuService.getBakkusByOceanId(oceanId).subscribe((res) => {
+      if (!res) {
+        this.isEmpty = true;
+      }
+
+      this.isEmpty = res.empty;
+      this.bakkus = res.content;
     });
   }
 }

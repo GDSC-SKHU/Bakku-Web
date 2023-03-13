@@ -8,7 +8,7 @@
   <section class="wrapper">
     <div class="wrapper__content">
       <article class="info-wrapper">
-        <h1 class="info-wrapper__title">{{ ocean.name }} {{ ocean.id }}</h1>
+        <h1 class="info-wrapper__title">{{ ocean.name }}</h1>
         <span class="info-wrapper__addr">{{ ocean.address }}</span>
 
         <div class="info-wrapper__row">
@@ -27,10 +27,14 @@
         </div>
       </article>
 
-      <article class="bakku-wrapper">
+      <article *ngIf="!isEmpty" class="bakku-wrapper">
         <h2 class="bakku-wrapper__title">이 바다를 가꾼 바꾸들</h2>
 
         <app-bakku-card *ngFor="let bakku of bakkus" [bakku]="bakku" />
+      </article>
+
+      <article *ngIf="isEmpty" class="empty">
+        <h2>아직 {{ ocean.name }}을 가꾼 바꾸가 없어요.</h2>
       </article>
     </div>
   </section>
