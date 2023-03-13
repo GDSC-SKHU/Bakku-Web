@@ -1,1 +1,9 @@
-<p>group-card works!</p>
+<mat-card class="card">
+  <mat-card-header class="card__header">
+    <mat-card-title class="card__header__title">{{ group.groupName }}</mat-card-title>
+    <mat-card-subtitle class="card__header__subtitle"
+      >{{ group.createdDate }}부터 함께 했어요</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content>{{ content }}</mat-card-content>
+</mat-card>

@@ -9,19 +9,6 @@
   </mat-select>
 </mat-form-field>
 
-<section class="card-wrapper">
-  <app-bakku-card
-    [bakku]="{
-      id: 1,
-      oceanName: '을왕리 해수욕장',
-      groupName: '성공회대 GDSC',
-      titleImageUrl:
-        'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      decorateTime: '22. 02. 27.',
-      cleanWeight: 10,
-      comment: '',
-      oceanId: 1,
-      afterImageUrl: ''
-    }"
-  />
+<section class="card-wrapper" *ngIf="selectedSortTerm$ | async as selectedSortTerm">
+  <app-group-card *ngFor="let group of groups" [group]="group" [sortTerm]="selectedSortTerm" />
 </section>
