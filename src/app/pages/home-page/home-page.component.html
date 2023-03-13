@@ -32,20 +32,7 @@
     <h2 class="bakku__title">어떤 바꾸들이 있었을까요?</h2>
 
     <div class="bakku__card-wrapper">
-      <app-bakku-card
-        [bakku]="{
-          id: 1,
-          oceanName: '을왕리 해수욕장',
-          groupName: '성공회대 GDSC',
-          titleImageUrl:
-            'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-          decorateTime: '22. 02. 27.',
-          cleanWeight: 10,
-          comment: '',
-          oceanId: 1,
-          afterImageUrl: ''
-        }"
-      />
+      <app-bakku-card *ngFor="let bakku of bakkus" [bakku]="bakku" />
     </div>
   </section>
 </main>
