@@ -1,5 +1,8 @@
 <mat-form-field class="select" appearance="outline">
-  <mat-select [(ngModel)]="selectedSortTerm">
+  <mat-select
+    [ngModel]="selectedSortTerm$ | async"
+    (ngModelChange)="onSelectedSortTermChange($event)"
+  >
     <mat-option *ngFor="let sortTerm of sortTerms" [value]="sortTerm.value">
       {{ sortTerm.viewValue }}
     </mat-option>
