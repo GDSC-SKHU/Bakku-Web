@@ -17,6 +17,11 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   word-break: keep-all;
   word-wrap: break-word;
+  font-size: 16px;
+
+  @media (max-width: 599.98px) {
+    font-size: 14px;
+  }
 }
 a {
   text-decoration: none;
