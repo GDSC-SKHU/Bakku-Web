@@ -61,7 +61,10 @@ export class BakkuAppendPageComponent implements OnInit {
       formData.append(controlName, this.bakkuForm.get(controlName)?.value);
     });
 
-    this.bakkuService.postBakku(formData);
+    this.bakkuService.postBakku(formData).subscribe((res) => {
+      console.log("post 결과");
+      console.dir(res);
+    });
   };
 
   getOceans() {

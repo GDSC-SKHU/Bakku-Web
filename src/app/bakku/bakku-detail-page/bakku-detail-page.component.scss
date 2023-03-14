@@ -107,8 +107,9 @@ main {
 }
 
 .what-happened__img-section {
-  display: flex;
   width: 100%;
+  display: flex;
+  justify-content: center;
   gap: 0.625rem;
 
   &__img-wrapper {
