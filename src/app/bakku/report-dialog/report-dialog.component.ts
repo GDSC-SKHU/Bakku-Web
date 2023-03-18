@@ -1,8 +1,9 @@
 import { Component, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { ReportService } from "src/app/report/report.service";
 
 interface DialogData {
-  id: string;
+  id: number;
 }
 
 @Component({
@@ -14,11 +15,12 @@ export class ReportDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<ReportDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private reportService: ReportService,
   ) {}
 
   onReportClick = () => {
-    // TODO: 신고 접수 API 호출
-    console.log(`신고 접수 ${this.data.id}`);
-    this.dialogRef.close();
+    this.reportService.postReport(this.data.id).subscribe(() => {
+      this.dialogRef.close();
+    });
   };
 }
