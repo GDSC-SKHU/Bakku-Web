@@ -21,7 +21,7 @@ export class BakkuService {
   constructor(private http: HttpClient) {}
 
   postBakku(data: FormData) {
-    return this.http.post("/bakkus", data, { headers: { "Content-Type": "multipart/form-data" } });
+    return this.http.post("/bakkus", data);
   }
 
   getBakkuById(id: number) {

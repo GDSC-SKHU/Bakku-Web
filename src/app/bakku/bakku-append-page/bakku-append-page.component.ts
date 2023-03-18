@@ -57,10 +57,24 @@ export class BakkuAppendPageComponent implements OnInit {
 
   onSubmit = () => {
     const formData = new FormData();
-    Object.keys(this.bakkuForm.controls).forEach((controlName) => {
-      formData.append(controlName, this.bakkuForm.get(controlName)?.value);
-    });
+    formData.append("oceanId", "1");
+    formData.append("cleanWeight", "1");
+    formData.append("comment", "asdf");
+    formData.append("groupName", "groupname");
+    formData.append("titleImage", this.bakkuForm.get("titleImage")!.value);
+    formData.append("beforeImage", this.bakkuForm.get("beforeImage")!.value);
+    formData.append("afterImage", this.bakkuForm.get("afterImage")!.value);
+    formData.append("decorateDate", "1998-04-14");
 
+    // Object.keys(this.bakkuForm.controls).forEach((controlName) => {
+    //   if (controlName === "date") {
+    //     formData.append(controlName, "1998-04-14");
+    //   } else if {
+    //     formData.append(controlName, this.bakkuForm.get(controlName)?.value);
+    //   }
+    // });
+
+    console.log(formData);
     this.bakkuService.postBakku(formData).subscribe((res) => {
       console.log("post 결과");
       console.dir(res);

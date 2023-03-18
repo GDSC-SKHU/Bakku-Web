@@ -1,7 +1,12 @@
 <main>
   <h1 class="title">바다를 가꾼 기록을 공유해 주세요.</h1>
 
-  <form [formGroup]="bakkuForm" class="bakku-form" (ngSubmit)="onSubmit()">
+  <form
+    [formGroup]="bakkuForm"
+    class="bakku-form"
+    (ngSubmit)="onSubmit()"
+    enctype="multipart/form-data"
+  >
     <app-image-input-with-preview
       class="title-image-wrapper"
       [formGroup]="bakkuForm"
