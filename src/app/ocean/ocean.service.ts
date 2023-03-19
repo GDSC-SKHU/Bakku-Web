@@ -11,6 +11,7 @@ export interface Ocean {
   imageUrl: string;
   createdDate: Date;
   modifiedDate: Date;
+  comment: string;
 }
 
 interface Position {
