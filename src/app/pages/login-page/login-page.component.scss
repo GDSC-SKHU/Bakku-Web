@@ -10,8 +10,46 @@ main {
   align-items: center;
 }
 
+@keyframes imageLogo {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  50% {
+    transform: rotateZ(4deg);
+  }
+
+  78% {
+    transform: rotateZ(-5deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
 section {
   height: 300px;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20vh;
+
+  .image {
+    width: 100%;
+    max-width: 18.75rem;
+    height: 18.75rem;
+    object-fit: contain;
+    margin-bottom: 40px;
+
+    animation: imageLogo 5s cubic-bezier(0.6, -0.05, 0.01, 0.99) infinite;
+  }
+
+  .text {
+    width: 80px;
+  }
 }
 
 .login-btn {
