@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
 import { Ocean, OceanService } from "src/app/ocean/ocean.service";
 import { ImageInput } from "src/app/shared/class/image-input";
@@ -20,6 +21,7 @@ export class BakkuAppendPageComponent implements OnInit {
     private bakkuService: BakkuService,
     private oceanService: OceanService,
     private router: Router,
+    private snackBar: MatSnackBar,
   ) {}
 
   oceans: Ocean[] = [];
@@ -56,7 +58,7 @@ export class BakkuAppendPageComponent implements OnInit {
     this.appendImageFileWhenVaild(formData, "afterImage", this.afterImage);
 
     this.bakkuService.postBakku(formData).subscribe(() => {
-      // TODO: 토스트 메세지 띄우기
+      this.snackBar.open("바꾸가 추가되었어요", "닫기", { duration: 3000 });
       this.router.navigate(["/"]);
     });
   };
