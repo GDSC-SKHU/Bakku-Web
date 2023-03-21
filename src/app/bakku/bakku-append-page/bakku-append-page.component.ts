@@ -24,29 +24,6 @@ export class BakkuAppendPageComponent implements OnInit {
   beforeImage = new ImageInput();
   afterImage = new ImageInput();
 
-  processFile = (input: HTMLInputElement, imageInput: ImageInput) => {
-    const file: File = input.files![0];
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      imageInput.src = reader.result as string;
-      imageInput.file = file;
-      imageInput.onSuccess();
-    };
-
-    reader.onerror = () => {
-      imageInput.onError();
-    };
-
-    reader.readAsDataURL(file);
-  };
-
-  clearImageInput = (imageFormName: keyof typeof this.bakkuForm.value, imageInput: ImageInput) => {
-    imageInput.clear();
-    const control = this.getFormControl(imageFormName)!;
-    control.reset();
-  };
-
   bakkuForm = new FormGroup({
     groupName: new FormControl("", [Validators.required]),
     oceanId: new FormControl("", [Validators.required]),
@@ -57,22 +34,23 @@ export class BakkuAppendPageComponent implements OnInit {
 
   onSubmit = () => {
     const formData = new FormData();
-    formData.append("oceanId", "1");
-    formData.append("cleanWeight", "1");
-    formData.append("comment", "asdf");
-    formData.append("groupName", "groupname");
-    formData.append("titleImage", this.bakkuForm.get("titleImage")!.value);
-    formData.append("beforeImage", this.bakkuForm.get("beforeImage")!.value);
-    formData.append("afterImage", this.bakkuForm.get("afterImage")!.value);
-    formData.append("decorateDate", "1998-04-14");
 
-    // Object.keys(this.bakkuForm.controls).forEach((controlName) => {
-    //   if (controlName === "date") {
-    //     formData.append(controlName, "1998-04-14");
-    //   } else if {
-    //     formData.append(controlName, this.bakkuForm.get(controlName)?.value);
-    //   }
-    // });
+    Object.keys(this.bakkuForm.controls).forEach((controlName) => {
+      if (controlName === "date") {
+        const date = this.bakkuForm.get(controlName)!.value!;
+        const timezoneOffset = date.getTimezoneOffset();
+        const timezoneDate = new Date(date.getTime() - timezoneOffset * 60 * 1000);
+        const timezoneYYYYMMDD = timezoneDate.toISOString().split("T")[0];
+
+        formData.append(controlName, timezoneYYYYMMDD);
+      } else {
+        formData.append(controlName, this.bakkuForm.get(controlName)?.value);
+      }
+    });
+
+    formData.append("titleImage", this.titleImage.file!, this.titleImage.file!.name);
+    formData.append("beforeImage", this.beforeImage.file!, this.beforeImage.file!.name);
+    formData.append("afterImage", this.afterImage.file!, this.afterImage.file!.name);
 
     console.log(formData);
     this.bakkuService.postBakku(formData).subscribe((res) => {

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { Component, Input } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 import { ImageInput } from "src/app/shared/class/image-input";
 
 @Component({
@@ -7,21 +7,12 @@ import { ImageInput } from "src/app/shared/class/image-input";
   templateUrl: "./image-input-with-preview.component.html",
   styleUrls: ["./image-input-with-preview.component.scss"],
 })
-export class ImageInputWithPreviewComponent implements OnInit {
-  @Input() formName!: string;
-  @Input() formGroup!: FormGroup;
+export class ImageInputWithPreviewComponent {
   @Input() required: boolean = false;
   @Input() text!: string;
+  @Input() imageInput!: ImageInput;
 
   declare imageFormGroup: FormGroup;
-  imageInput = new ImageInput();
-
-  ngOnInit() {
-    const { formName } = this;
-    this.imageFormGroup = new FormGroup({});
-    this.imageFormGroup.addControl(formName, new FormControl<File | null>(null));
-    this.formGroup.addControl(formName, this.imageFormGroup.controls[formName]);
-  }
 
   processFile = (input: HTMLInputElement) => {
     const file: File = input.files![0];
@@ -42,6 +33,5 @@ export class ImageInputWithPreviewComponent implements OnInit {
 
   clearImageInput = () => {
     this.imageInput.clear();
-    this.imageFormGroup.controls[this.formName].reset();
   };
 }

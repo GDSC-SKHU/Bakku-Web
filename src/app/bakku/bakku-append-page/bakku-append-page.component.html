@@ -9,8 +9,7 @@
   >
     <app-image-input-with-preview
       class="title-image-wrapper"
-      [formGroup]="bakkuForm"
-      formName="titleImage"
+      [imageInput]="titleImage"
       text="대표 사진 올리기*"
       [required]="true"
     />
@@ -20,14 +19,13 @@
     <div class="row">
       <app-image-input-with-preview
         class="before-after-image-wrapper"
-        [formGroup]="bakkuForm"
-        formName="beforeImage"
+        [imageInput]="beforeImage"
         text="바꾸 이전 사진 올리기"
         [required]="false"
       />
       <app-image-input-with-preview
         class="before-after-image-wrapper"
-        [formGroup]="bakkuForm"
+        [imageInput]="afterImage"
         formName="afterImage"
         text="바꾸 이후 사진 올리기*"
         [required]="true"
