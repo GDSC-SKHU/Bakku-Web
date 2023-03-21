@@ -6,6 +6,8 @@ import { ImageInput } from "src/app/shared/class/image-input";
 
 import { BakkuService } from "../bakku.service";
 
+type ImageType = "titleImage" | "beforeImage" | "afterImage";
+
 @Component({
   selector: "app-bakku-append-page",
   templateUrl: "./bakku-append-page.component.html",
@@ -41,23 +43,26 @@ export class BakkuAppendPageComponent implements OnInit {
         const timezoneOffset = date.getTimezoneOffset();
         const timezoneDate = new Date(date.getTime() - timezoneOffset * 60 * 1000);
         const timezoneYYYYMMDD = timezoneDate.toISOString().split("T")[0];
-
-        formData.append(controlName, timezoneYYYYMMDD);
+        formData.append("decorateDate", timezoneYYYYMMDD);
       } else {
         formData.append(controlName, this.bakkuForm.get(controlName)?.value);
       }
     });
 
-    formData.append("titleImage", this.titleImage.file!, this.titleImage.file!.name);
-    formData.append("beforeImage", this.beforeImage.file!, this.beforeImage.file!.name);
-    formData.append("afterImage", this.afterImage.file!, this.afterImage.file!.name);
+    this.appendImageFileWhenVaild(formData, "titleImage", this.titleImage);
+    this.appendImageFileWhenVaild(formData, "beforeImage", this.beforeImage);
+    this.appendImageFileWhenVaild(formData, "afterImage", this.afterImage);
 
-    console.log(formData);
     this.bakkuService.postBakku(formData).subscribe((res) => {
-      console.log("post 결과");
-      console.dir(res);
+      console.log(res);
     });
   };
+
+  appendImageFileWhenVaild(formData: FormData, imageType: ImageType, image: ImageInput) {
+    if (image.status !== "ok" || image.file === null) return;
+
+    formData.append(imageType, image.file, image.file.name);
+  }
 
   getOceans() {
     this.oceanService
