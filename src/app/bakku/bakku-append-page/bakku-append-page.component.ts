@@ -35,7 +35,7 @@ export class BakkuAppendPageComponent implements OnInit {
     oceanId: new FormControl("", [Validators.required]),
     date: new FormControl<Date>(new Date(), [Validators.required]),
     cleanWeight: new FormControl(0, [Validators.required]),
-    comment: new FormControl(""),
+    comment: new FormControl("", [Validators.required]),
   });
 
   onSubmit = () => {
