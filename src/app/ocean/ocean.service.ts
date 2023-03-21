@@ -20,7 +20,7 @@ interface Position {
 }
 
 const DEFAULT_POSITION: Position = { lat: 37.49999, lon: 126.65099 };
-
+const MAX_OCEAN_SIZE = 100;
 @Injectable({
   providedIn: "root",
 })
@@ -46,7 +46,7 @@ export class OceanService {
   }
 
   getOceansByPosition({ lat, lon }: Position) {
-    return this.http.get<Paging<Ocean>>(`/oceans?lat=${lat}&lon=${lon}`);
+    return this.http.get<Paging<Ocean>>(`/oceans?lat=${lat}&lon=${lon}&size=${MAX_OCEAN_SIZE}`);
   }
 
   getOceanById(id: number) {
