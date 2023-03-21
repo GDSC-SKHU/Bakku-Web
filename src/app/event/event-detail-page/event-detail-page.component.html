@@ -1,10 +1,6 @@
 <main *ngIf="event$ | async as event">
   <section class="ocean-img-wrapper">
-    <img
-      class="ocean-img"
-      src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    />
-    <!-- <img class="ocean-img" src="{{ event.imageUrl }}" /> -->
+    <img class="ocean-img" src="{{ event.imageUrl }}" alt="{{ event.name }}" />
   </section>
 
   <div class="remainer"></div>

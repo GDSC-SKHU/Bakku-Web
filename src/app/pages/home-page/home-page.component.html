@@ -7,6 +7,11 @@
         class="event__item"
       >
         <h3 class="event__item__title">{{ event.name }}</h3>
+        <img
+          class="event__item__background_image"
+          src="{{ event.imageUrl }}"
+          alt="{{ event.name }}"
+        />
       </app-carousel-item>
     </app-carousel-wrapper>
     <app-carousel-indicator />
