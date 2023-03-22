@@ -2,9 +2,9 @@
 
 <br />
 <br />
+<br />
 
-<img src="https://user-images.githubusercontent.com/26461307/226811002-8be307e1-bec7-4875-9e42-14efbb908248.png" align="left"  >
-
+<img src="https://user-images.githubusercontent.com/26461307/226812719-ab50631f-7764-4448-8c1d-da0727463ae2.png" align="right"  >
 # Bakku
 
 Easiest way for cleaning ocean
