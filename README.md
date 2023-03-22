@@ -4,7 +4,8 @@
 <br />
 <br />
 
-<img src="https://user-images.githubusercontent.com/26461307/226812719-ab50631f-7764-4448-8c1d-da0727463ae2.png" align="right"  >
+<img src="https://user-images.githubusercontent.com/26461307/226812719-ab50631f-7764-4448-8c1d-da0727463ae2.png" align="right" width="200px" />
+
 # Bakku
 
 Easiest way for cleaning ocean
