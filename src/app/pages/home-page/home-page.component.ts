@@ -39,7 +39,7 @@ export class HomePageComponent implements OnInit {
 
   getOceans() {
     this.oceanService.getCurrentPosition().subscribe(({ lat, lon }) => {
-      this.oceanService.getOceansByPosition({ lat, lon }).subscribe((res) => {
+      this.oceanService.getOceansByPosition({ lat, lon, size: 5 }).subscribe((res) => {
         this.oceans = res.content;
       });
     });
