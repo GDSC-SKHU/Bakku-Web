@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
 
 @import "./app/shared/mixins/theme.scss";
+@import "./app/shared/mixins/layout.scss";
 
 @include mat.core();
 
@@ -19,7 +20,7 @@ body {
   word-wrap: break-word;
   font-size: 16px;
 
-  @media (max-width: 599.98px) {
+  @include mediaXs {
     font-size: 14px;
   }
 }

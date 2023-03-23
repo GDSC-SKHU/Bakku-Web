@@ -12,3 +12,18 @@
     display: none !important;
   }
 }
+
+$breakpoint-xs: 599.98px;
+$breakpoint-sm: 959.98px;
+
+@mixin mediaXs {
+  @media (max-width: #{$breakpoint-xs}) {
+    @content;
+  }
+}
+
+@mixin mediaSm {
+  @media (max-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
