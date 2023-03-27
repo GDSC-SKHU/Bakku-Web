@@ -32,8 +32,8 @@ export class BakkuService {
     return this.http.get<Paging<Bakku>>(`/bakkus?sort=decorateTime,desc&page=${page}`);
   }
 
-  getBakkusByUid(uid: string) {
-    return this.http.get<Paging<Bakku>>(`/bakkus?uid=${uid}`);
+  getBakkusByUid(uid: string, page: number = 0) {
+    return this.http.get<Paging<Bakku>>(`/bakkus?uid=${uid}&page=${page}`);
   }
 
   getBakkusByOceanId(oceanId: number) {

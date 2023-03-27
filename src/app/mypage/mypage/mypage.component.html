@@ -16,6 +16,16 @@
 
     <div *ngIf="!isEmpty" class="bakkus__wrapper">
       <app-bakku-card *ngFor="let bakku of bakkus" [bakku]="bakku" />
+
+      <button
+        class="bakkus__wrapper__more-button"
+        *ngIf="!isLast"
+        mat-flat-button
+        color="primary"
+        (click)="getMoreBakkusByUid()"
+      >
+        더 보기
+      </button>
     </div>
 
     <div *ngIf="isEmpty" class="bakkus--empty">

@@ -15,6 +15,9 @@ export class MypageComponent implements OnInit {
     private bakkuService: BakkuService,
   ) {}
 
+  bakkuPage: number = 0;
+  isLast: boolean = false;
+
   bakkus: Bakku[] = [];
   isEmpty: boolean = false;
 
@@ -35,8 +38,19 @@ export class MypageComponent implements OnInit {
           return;
         }
 
+        this.isLast = res.last;
         this.isEmpty = res.empty;
         this.bakkus = res.content;
+      });
+    });
+  }
+
+  getMoreBakkusByUid() {
+    this.bakkuPage += 1;
+    this.auth.user.subscribe((user) => {
+      this.bakkuService.getBakkusByUid(user!.uid, this.bakkuPage).subscribe((res) => {
+        this.isLast = res.last;
+        this.bakkus = [...this.bakkus, ...res.content];
       });
     });
   }
