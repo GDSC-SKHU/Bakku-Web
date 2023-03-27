@@ -49,6 +49,10 @@ main {
 
 .ocean {
   margin-bottom: 140px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
 
   &__title {
     @include heading-title;
@@ -56,6 +60,7 @@ main {
   }
 
   &__card-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;

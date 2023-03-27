@@ -31,6 +31,16 @@
         }"
       />
     </div>
+
+    <button
+      class="more-button"
+      *ngIf="!isOceanEmpty"
+      mat-flat-button
+      color="primary"
+      (click)="getMoreOceans()"
+    >
+      더 보기
+    </button>
   </section>
 
   <section class="bakku">

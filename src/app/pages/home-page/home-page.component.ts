@@ -18,6 +18,9 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   events: Event[] = [];
+
+  isOceanEmpty: boolean = false;
+  oceanPage: number = 0;
   oceans: Ocean[] = [];
 
   isBakkuEmpty: boolean = false;
@@ -45,6 +48,18 @@ export class HomePageComponent implements OnInit {
       this.oceanService.getOceansByPosition({ lat, lon, size: 5 }).subscribe((res) => {
         this.oceans = res.content;
       });
+    });
+  }
+
+  getMoreOceans() {
+    this.oceanPage += 1;
+    this.oceanService.getCurrentPosition().subscribe(({ lat, lon }) => {
+      this.oceanService
+        .getOceansByPosition({ lat, lon, size: 5, page: this.oceanPage })
+        .subscribe((res) => {
+          this.oceans = [...this.oceans, ...res.content];
+          this.isOceanEmpty = res.empty;
+        });
     });
   }
 

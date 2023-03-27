@@ -45,8 +45,13 @@ export class OceanService {
     });
   }
 
-  getOceansByPosition({ lat, lon, size = MAX_OCEAN_SIZE }: Position & { size?: number }) {
-    return this.http.get<Paging<Ocean>>(`/oceans?lat=${lat}&lon=${lon}&size=${size}`);
+  getOceansByPosition({
+    lat,
+    lon,
+    size = MAX_OCEAN_SIZE,
+    page = 0,
+  }: Position & { size?: number; page?: number }) {
+    return this.http.get<Paging<Ocean>>(`/oceans?lat=${lat}&lon=${lon}&size=${size}&page=${page}`);
   }
 
   getOceanById(id: number) {
