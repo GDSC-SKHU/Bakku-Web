@@ -19,6 +19,9 @@ export class HomePageComponent implements OnInit {
 
   events: Event[] = [];
   oceans: Ocean[] = [];
+
+  isBakkuEmpty: boolean = false;
+  bakkuPage: number = 0;
   bakkus: Bakku[] = [];
 
   onEventClick(id: number) {
@@ -48,6 +51,14 @@ export class HomePageComponent implements OnInit {
   getBakkus() {
     this.bakkuService.getRecentBakkus().subscribe((res) => {
       this.bakkus = res.content;
+    });
+  }
+
+  getMoreBakkus() {
+    this.bakkuPage += 1;
+    this.bakkuService.getRecentBakkus(this.bakkuPage).subscribe((res) => {
+      this.bakkus = [...this.bakkus, ...res.content];
+      this.isBakkuEmpty = res.empty;
     });
   }
 }

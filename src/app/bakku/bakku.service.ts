@@ -28,8 +28,8 @@ export class BakkuService {
     return this.http.get<Bakku>(`/bakkus/${id}`);
   }
 
-  getRecentBakkus() {
-    return this.http.get<Paging<Bakku>>("/bakkus?sort=decorateTime,desc");
+  getRecentBakkus(page: number = 0) {
+    return this.http.get<Paging<Bakku>>(`/bakkus?sort=decorateTime,desc&page=${page}`);
   }
 
   getBakkusByUid(uid: string) {
