@@ -7,19 +7,24 @@
 - [Web](https://github.com/GDSC-SKHU/Bakku-Web)
 - [Android](https://github.com/GDSC-SKHU/Bakku-Android)
 - [Server](https://github.com/GDSC-SKHU/Bakku-General-Server)
+- [Flutter](https://github.com/GDSC-SKHU/Bakku-Flutter)
 
 ## Introduce
 
-<img src="https://d33wubrfki0l68.cloudfront.net/5228e002c12365261fb0792e82de1106ee2b0aea/f397d/img/uploads/14.svg" alt="un logo" align="left" height = "50" />
+<img src="https://user-images.githubusercontent.com/26461307/228550374-361b70ff-1b7d-4009-9877-07988171d9da.png" alt="un logo" align="left" height = "50" />
 
-This service is the subject of [Life Below Water](https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/07/14_Why-It-Matters-2020.pdf) among the UN's Sustainable Development Goals.
+<img src="https://user-images.githubusercontent.com/26461307/228550853-3cc719e3-5feb-49a5-a9b0-6a05b303a8d6.png" alt="un logo" align="left" height = "50" />
+
+This service is the subject of [CLEAN WATER AND SANITATION](https://sdgs.un.org/goals/goal6) and [LIFE BELOW WATER](https://sdgs.un.org/goals/goal14) among the UN's Sustainable Development Goals.
 
 <br/>
 <br/>
 
 We thought about raising people's awareness that the sea ecosystem is dangerous and motivating them to solve it.
 
-So the service that we created is **"Bakku"**
+So the service that we created is **'Bakku'**
+
+> The word 'Bakku' is short for 'caring the sea' in korea.
 
 Through various functions, we created SNS that is fun and motivating to users.
 
@@ -27,7 +32,7 @@ For more information on how to use it, please [refer](#how-to-use) to the follow
 
 ## How to Use(Web)
 
-**[Service Link](https://bakku-web.web.app/)**
+**[Service Link (https://bakku-web.web.app/)](https://bakku-web.web.app/)**
 
 ### Login
 
@@ -93,8 +98,15 @@ You can see my information and the changes you made.
 
 ## Tech Stack
 
+- Angular
+- Material
+- Firebase hosting
+- Google analytics
+- Eslint, prettier
+- Husky, Commitlint, Lint-staged
+
 ## Developers
 
-|                         FE: HyeSung Oh                         |                       Android: SuBin Kim                       |                           BE: HyunSoo Han                           |                       BE: HongYoung Jun                        |
+|                         FE: Hyesung Oh                         |                       Android: Subin Kim                       |                           BE: Hyunsoo Han                           |                       BE: Hongyoung Jun                        |
 | :------------------------------------------------------------: | :------------------------------------------------------------: | :-----------------------------------------------------------------: | :------------------------------------------------------------: |
 | ![avata](https://avatars.githubusercontent.com/u/26461307?v=4) | ![avata](https://avatars.githubusercontent.com/u/58244158?v=4) | ![avata](https://avatars.githubusercontent.com/u/37373826?s=64&v=4) | ![avata](https://avatars.githubusercontent.com/u/77445491?v=4) |
